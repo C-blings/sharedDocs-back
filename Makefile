@@ -1,11 +1,17 @@
 COMPILER = g++
 NAME = server
 
-.PHONY: all 
-all: 
-	$(COMPILER) main.cpp Web/TCPServer/* -o $(NAME)
-	./$(NAME)
+.PHONY: all
+all: compile run
+
+.PHONY: compile 
+compile: 
+	$(COMPILER) main.cpp $(shell find /src -name '*.cpp') -o $(NAME)
+
+.PHONY: run
+run: $(NAME)
+	./$^
 
 .PHONY: clean
 clean:
-	rm $(Name)
+	rm $(NAME)

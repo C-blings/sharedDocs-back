@@ -22,21 +22,4 @@ namespace web_layout{
             exit(2);
         }
     }
-
-    void TCPServer::StartListen(){
-        listen(socket_, MAX_USERS_COUNT);
-
-        while(1)
-        {
-            listener_ = accept(socket_, NULL, NULL);
-
-            if(listener_ < 0)
-            {
-                perror("accept");
-                exit(3);
-            }
-
-            // handle user
-        }
-    }
 }; // namespace web_layout
