@@ -4,8 +4,8 @@
 
 namespace web_layout{
 
-    void WebHandler::HandleRequest(const HttpRequest& http_request) {
-
+    char* WebHandler::HandleRequest(const HttpRequest& http_request) {
+        return "answer";
     }
 
 } // namespace web_layout

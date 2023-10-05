@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../HttpsRequest.hpp"
+#include "../HttpRequest.hpp"
 
 namespace web_layout{
 
     class HandlerBase{
         public:
 
-            virtual void HandleRequest(const HttpRequest& http_request) = 0;
+            virtual char* HandleRequest(const HttpRequest& http_request) = 0;
         
     };
 

@@ -6,7 +6,7 @@ namespace web_layout{
 
     class WebHandler : public HandlerBase{
         public:
-            void HandleRequest(const HttpRequest& http_request) override;
+            char* HandleRequest(const HttpRequest& http_request) override;
         
     };
 
