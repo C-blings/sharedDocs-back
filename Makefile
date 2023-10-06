@@ -6,12 +6,12 @@ all: compile run
 
 .PHONY: compile 
 compile: 
-	$(COMPILER) main.cpp $(shell find ./src -name '*.cpp') -o $(NAME)
+	$(COMPILER) -g main.cpp $(shell find ./src -name '*.cpp') -o $(NAME)
 	echo $(shell find ./src -name '*.cpp')
 
 .PHONY: run
 run: $(NAME)
-	./$^
+	valgrind ./$^
 
 .PHONY: clean
 clean:

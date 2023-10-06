@@ -8,7 +8,7 @@ namespace web_layout{
         public:
             
             static HttpRequest GetHttpRequest(char buf[], int size){
-
+                return HttpRequest(Method::GET, "", "", "");
             }
 
     };

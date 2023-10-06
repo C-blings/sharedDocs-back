@@ -11,6 +11,7 @@
 
 #include "../models/handlers/HandlerBase.hpp"
 #include "../helpers/HttpRequestParser.hpp"
+#include "../models/handlers/WebHandler.hpp"
 
 namespace web_layout
 {
@@ -22,8 +23,7 @@ namespace web_layout
         public:
             explicit TCPServer(const std::string& ip_address, int port);
 
-            template<class HandlerType>
-            void StartListen(HandlerType handler) {
+            void StartListen(HandlerBase* handler) {
                 listen(socket_, MAX_USERS_COUNT);
 
                 char request_buffer[MAX_REQUEST_SIZE];
@@ -39,11 +39,22 @@ namespace web_layout
                     }
 
                     // handle user
-                    int request_size = recv(listener_, request_buffer, MAX_REQUEST_SIZE, 0);
+                    size_t request_size = recv(listener_, request_buffer, MAX_REQUEST_SIZE, 0);
                     HttpRequest request = HttpRequestParser::GetHttpRequest(request_buffer, request_size);
-                    char* response = handler.HandleRequest(request);
-                    send(listener_, response, sizeof(response), 0);
+
+                    std::string response = handler->HandleRequest(request).AsString();
+
+                    if(send(listener_, response.c_str(), response.size(), 0) < 0){
+                        perror("sending answer");
+                        exit(4);
+                    }
+
+                    close(listener_);
                 }
+            }
+
+            ~TCPServer(){
+                close(listener_);
             }
 
         private:
