@@ -12,6 +12,10 @@ compile:
 run: $(NAME)
 	valgrind ./$^
 
+.PHONY: install_deps
+install_deps:
+	apt-get install libboost-all-dev
+
 .PHONY: clean
 clean:
 	rm $(NAME)
