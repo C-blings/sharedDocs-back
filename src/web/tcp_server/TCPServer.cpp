@@ -3,7 +3,7 @@
 namespace web_layout{
 
     TCPServer::TCPServer(const std::string& ip_address, int port) :
-                ip_address_(ip_address), port_(port){
+                ip_address_(ip_address), port_(port), active_(true){
         sockaddr_in addr;
 
         socket_ = socket(AF_INET, SOCK_STREAM, 0);

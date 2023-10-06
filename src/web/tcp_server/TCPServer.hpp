@@ -28,7 +28,7 @@ namespace web_layout
 
                 char request_buffer[MAX_REQUEST_SIZE];
 
-                while(1)
+                while(active_)
                 {
                     listener_ = accept(socket_, NULL, NULL);
 
@@ -62,5 +62,6 @@ namespace web_layout
             const int port_;
             int socket_;
             int listener_;
+            bool active_;
     };
 }; // namespace web_layout
