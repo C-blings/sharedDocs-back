@@ -14,6 +14,8 @@ run: $(NAME)
 
 .PHONY: install_deps
 install_deps:
+	apt-get intsall g++ -y
+	apt-get install valgrind -y
 	apt-get install libboost-all-dev
 
 .PHONY: clean
