@@ -5,7 +5,7 @@
 
 namespace web_layout{
 
-    class HandlerBase{
+    class ServerBase{
         public:
 
             virtual HttpResponse HandleRequest(const HttpRequest& http_request) = 0;

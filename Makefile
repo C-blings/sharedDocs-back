@@ -13,10 +13,11 @@ run: $(NAME)
 	valgrind ./$^
 
 .PHONY: install_deps
-install_deps: docker_install
+install_deps:
 	apt-get intsall g++ -y
 	apt-get install valgrind -y
 	apt-get install libboost-all-dev
+	apt-get install libjsoncpp-dev libjsoncpp0
 
 .PHONY: clean
 clean:

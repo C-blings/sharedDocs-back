@@ -6,8 +6,9 @@ namespace web_layout{
     enum Method{
         GET,
         POST,
+        PUT,
+        DELETE,
     };
-
 
     class HttpRequest{
     public:
@@ -15,6 +16,10 @@ namespace web_layout{
                     const std::string& headers_, const std::string& body) :
                 method_(method), path_(path),
                 headers_(headers_), body_(body) {}
+
+        Method GetMethod() const { return method_; }
+
+        std::string GetPath() const { return path_; }
 
     private:
         const Method method_;
