@@ -9,9 +9,9 @@
 #include <arpa/inet.h>
 #include <iostream>
 
-#include "../models/handlers/ServerBase.hpp"
+#include "../models/servers/ServerBase.hpp"
 #include "../helpers/HttpRequestParser.hpp"
-#include "../models/handlers/WebServer.hpp"
+#include "../models/servers/WebServer.hpp"
 #include "../models/routers/RouterBase.hpp"
 
 namespace web_layout

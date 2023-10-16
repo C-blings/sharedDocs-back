@@ -1,6 +1,6 @@
 #include <iostream>
 #include "src/web/tcp_server/TCPServer.hpp"
-#include "src/web/models/handlers/WebServer.hpp"
+#include "src/web/models/servers/WebServer.hpp"
 #include "src/web/models/routers/RouterBase.hpp"
 
 int main(){
