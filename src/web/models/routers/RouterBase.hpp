@@ -1,6 +1,6 @@
 #pragma once
 
-#include <unordered_map>
+#include <map>
 #include <functional>
 #include "../HttpRequest.hpp"
 #include "../../helpers/HandlerMatcher.hpp"
@@ -9,7 +9,7 @@
 namespace web_layout{
     class RouterBase {
         using RequestHandlerType = std::function<HttpResponse (const HttpRequest&)>;
-        using RouterType = std::unordered_map<HandlerMatcher, RequestHandlerType>;
+        using RouterType = std::map<HandlerMatcher, RequestHandlerType>;
     public:
 
         RouterBase(const RouterType& route_map) : route_map_(route_map) {}

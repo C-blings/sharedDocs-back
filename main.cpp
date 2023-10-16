@@ -4,12 +4,12 @@
 #include "src/web/models/routers/RouterBase.hpp"
 
 int main(){
-    web_layout::RouterBase router = {};
-
-    web_layout::TCPServer server("127.0.0.1", 80);
-    web_layout::WebServer* handler = new web_layout::WebServer(router);
-
-    server.StartListen(handler);
+//    web_layout::RouterBase router = {};
+//
+//    web_layout::TCPServer server("127.0.0.1", 80);
+//    web_layout::WebServer* handler = new web_layout::WebServer(router);
+//
+//    server.StartListen(handler);
 
     return 0;
 }
