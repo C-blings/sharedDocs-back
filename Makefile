@@ -14,10 +14,11 @@ run: $(NAME)
 
 .PHONY: install_deps
 install_deps:
-	apt-get intsall g++ -y
+	apt-get install g++ -y
 	apt-get install valgrind -y
-	apt-get install libboost-all-dev
-	apt-get install libjsoncpp-dev libjsoncpp0
+	apt-get install libboost-all-dev -y
+	apt-get install libjsoncpp-dev -y
+	apt-get install libgtest-dev -y
 
 .PHONY: clean
 clean:
