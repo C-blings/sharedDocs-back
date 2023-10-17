@@ -42,7 +42,7 @@ docker_install:
 test: $(TEST_MAIN_FILE)
 	mkdir $(BUILD_FOLDER)
 	$(COMPILER) -g $(TEST_MAIN_FILE) $(SRC_FILES) $(TESTS_FILES) -o $(TESTS_NAME) $(TESTING_FLAGS)
-	mv $(TESTS_NAME) /$(BUILD_FOLDER)
+	sudo mv $(TESTS_NAME) /$(BUILD_FOLDER)
 	cd  $(BUILD_FOLDER)
 	valgrind ./$(TESTS_NAME)
 
