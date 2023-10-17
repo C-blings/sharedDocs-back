@@ -7,29 +7,34 @@
 #include "../HttpResponse.hpp"
 
 namespace web_layout{
+    using RequestHandler = std::function<HttpResponse (const HttpRequest&)>;
+    struct Node{
+        HandlerMatcher matcher;
+        RequestHandler handler;
+    };
+    using Container = std::vector<Node>;
+
     class RouterBase {
-        using RequestHandlerType = std::function<HttpResponse (const HttpRequest&)>;
-        using RouterType = std::map<HandlerMatcher, RequestHandlerType>;
-    public:
+        public:
 
-        RouterBase(const RouterType& route_map) : route_map_(route_map) {}
+            RouterBase(const Container& route_map) : route_map_(route_map) {}
 
-        RequestHandlerType GetRequestHandler(const HttpRequest& request) const {
-            RequestHandlerType* founded_handler = nullptr;
-            for (auto [matcher, handler] : route_map_){
-                if(matcher.Match(request)){
-                    founded_handler = &handler;
+            RequestHandler GetRequestHandler(const HttpRequest& request) const {
+                RequestHandler* founded_handler = nullptr;
+                for (auto [matcher, handler] : route_map_){
+                    if(matcher.Match(request)){
+                        founded_handler = &handler;
+                    }
                 }
-            }
 
-            if (!founded_handler){
-                throw std::runtime_error("No handler founded");
-            }else{
-                return *founded_handler;
-            }
-        };
+                if (!founded_handler){
+                    throw std::runtime_error("No handler founded ");
+                }else{
+                    return *founded_handler;
+                }
+            };
 
-    private:
-        const RouterType route_map_;
+        private:
+            const Container route_map_;
     };
 }
