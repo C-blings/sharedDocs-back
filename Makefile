@@ -20,11 +20,11 @@ run: $(NAME)
 
 .PHONY: install_deps
 install_deps:
-	apt-get install g++ -y
-	apt-get install valgrind -y
-	apt-get install libboost-all-dev -y
-	apt-get install libjsoncpp-dev -y
-	apt-get install libgtest-dev -y
+	sudo apt-get install g++ -y
+	sudo apt-get install valgrind -y
+	sudo apt-get install libboost-all-dev -y
+	sudo apt-get install libjsoncpp-dev -y
+	sudo apt-get install libgtest-dev -y
 
 .PHONY: clean
 clean: $(NAME)
