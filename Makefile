@@ -6,6 +6,7 @@ TESTS_FILES = $(shell find ./tests -name '*.cpp')
 TESTING_FLAGS = -lgtest
 RUN_MAIN_FILE = main.cpp
 TEST_MAIN_FILE = tests.cpp
+DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev
 
 .PHONY: all
 all: compile run
@@ -20,11 +21,7 @@ run: $(NAME)
 
 .PHONY: install_deps
 install_deps:
-	sudo apt-get install g++ -y
-	sudo apt-get install valgrind -y
-	sudo apt-get install libboost-all-dev -y
-	sudo apt-get install libjsoncpp-dev -y
-	sudo apt-get install libgtest-dev -y
+	sudo apt-get install $(DEPS) -y
 
 .PHONY: clean
 clean: $(NAME)
