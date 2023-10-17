@@ -27,8 +27,9 @@ install_deps:
 	sudo apt-get install $(DEPS) -y
 
 .PHONY: clean
-clean: $(NAME)
-	rm $(NAME)
+clean:
+	rm -f $(BUILD_FOLDER)/$(NAME)
+	rm -f $(BUILD_FOLDER)/$(TESTS_NAME)
 
 docker_install:
 	sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
