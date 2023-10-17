@@ -14,14 +14,13 @@ all: compile run
 
 .PHONY: compile 
 compile: $(RUN_MAIN_FILE)
-	mkdir $(BUILD_FOLDER)
+	mkdir -p $(BUILD_FOLDER)
 	$(COMPILER) -g $(RUN_MAIN_FILE) $(SRC_FILES) -o $(NAME)
-	mv $(NAME) /$(BUILD_FOLDER)
+	mv $(NAME) $(BUILD_FOLDER)
 
 .PHONY: run
-run: $(NAME)
-	cd $(BUILD_FOLDER)
-	valgrind ./$^
+run:
+	valgrind ./$(BUILD_FOLDER)/$(NAME)
 
 .PHONY: install_deps
 install_deps:
@@ -40,9 +39,8 @@ docker_install:
 
 .PHONY: test
 test: $(TEST_MAIN_FILE)
-	mkdir $(BUILD_FOLDER)
+	mkdir -p $(BUILD_FOLDER)
 	$(COMPILER) -g $(TEST_MAIN_FILE) $(SRC_FILES) $(TESTS_FILES) -o $(TESTS_NAME) $(TESTING_FLAGS)
-	sudo mv $(TESTS_NAME) /$(BUILD_FOLDER)
-	cd  $(BUILD_FOLDER)
-	valgrind ./$(TESTS_NAME)
+	sudo mv $(TESTS_NAME) $(BUILD_FOLDER)
+	valgrind ./$(BUILD_FOLDER)/$(TESTS_NAME)
 
