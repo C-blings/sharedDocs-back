@@ -9,15 +9,15 @@
 
 namespace web_layout{
     class RequestHandlersContainerBase {
-        public:
-            RequestHandlersContainerBase(const Container& container) noexcept : container_(container) {}
+    public:
+        RequestHandlersContainerBase(const Container& container) noexcept : container_(container) {}
 
-            Container GetContainer() const {
-                return container_;
-            }
+        Container GetContainer() const {
+            return container_;
+        }
 
-        protected:
-            Container container_;
+    protected:
+        Container container_;
     };
 }
 
