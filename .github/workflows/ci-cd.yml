@@ -1,0 +1,21 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: update
+      run: sudo apt update && sudo apt upgrade
+    - name: install dependencies
+      run: make install_deps
+    - name: run tests
+      run: make test

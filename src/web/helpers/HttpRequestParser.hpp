@@ -25,28 +25,24 @@ namespace web_layout{
 				}
 
 				std::string path = methodAndPath[1];
+				std::string headers;
+				std::string body;
 
-				std::cerr << request << std::endl << std::endl;
-
-				std::string headers = "";
-				std::string body = "";
-
-
-				bool isBody = false;
-				for(int i = 1; i < request_lines.size(); ++i) {
-						if(isBody) {
-								body += request_lines[i] + '\n';
-						} else if(request_lines[i] == "") {
-								std::cerr << "!?!?!?!?\n";
-								isBody = true;
-						} else {
-								headers += request_lines[i] + '\n';
+				int i;
+				for(i = 1; i < request_lines.size(); ++i) {
+						if(request_lines[i] == "") {
+								++i;
+								break;
 						}
+						headers += request_lines[i] + '\n';
+				}
+
+				for(; i < request_lines.size(); ++i) {
+						body += request_lines[i] + '\n';
 				}
 
                 return HttpRequest(method, path, headers, body);
             }
-
     };
 
 }
