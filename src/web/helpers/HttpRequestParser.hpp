@@ -21,8 +21,12 @@ namespace web_layout{
 				Method method;
 				if(methodAndPath[0] == "GET") {
 						method = Method::GET;
-				} else {
+				} else if(methodAndPath[0] == "POST") {
 						method = Method::POST;
+				} else if(methodAndPath[0] == "PUT") {
+						method = Method::PUT;
+				} else if(methodAndPath[0] == "DELETE") {
+						method = Method::DELETE;
 				}
 
 				std::string path = methodAndPath[1];
