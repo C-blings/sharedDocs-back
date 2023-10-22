@@ -3,6 +3,7 @@
 #include "../models/HttpRequest.hpp"
 #include <sstream>
 #include <vector>
+#include <unordered_map>
 #include <boost/algorithm/string.hpp>
 
 namespace web_layout{
@@ -25,7 +26,7 @@ namespace web_layout{
 				}
 
 				std::string path = methodAndPath[1];
-				std::string headers;
+				std::unordered_map<std::string, std::string> headers;
 				std::string body;
 
 				int i;
@@ -34,7 +35,9 @@ namespace web_layout{
 								++i;
 								break;
 						}
-						headers += request_lines[i] + '\n';
+						std::vector<std::string> header;
+						boost::split(header, request_lines[i], boost::is_any_of(": "), boost::token_compress_on);
+						headers[header[0]] = header[1];
 				}
 
 				for(; i < request_lines.size(); ++i) {
