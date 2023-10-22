@@ -15,21 +15,21 @@ namespace web_layout{
                 std::vector<std::string> request_lines;
                 boost::split(request_lines, request, boost::is_any_of("\n\r"), boost::token_compress_on);
 				
-				std::vector<std::string> methodAndPath;
-				boost::split(methodAndPath, request_lines[0], boost::is_any_of(" "), boost::token_compress_on);
+				std::vector<std::string> method_and_path;
+				boost::split(method_and_path, request_lines[0], boost::is_any_of(" "), boost::token_compress_on);
 
 				Method method;
-				if(methodAndPath[0] == "GET") {
+				if(method_and_path[0] == "GET") {
 						method = Method::GET;
-				} else if(methodAndPath[0] == "POST") {
+				} else if(method_and_path[0] == "POST") {
 						method = Method::POST;
-				} else if(methodAndPath[0] == "PUT") {
+				} else if(method_and_path[0] == "PUT") {
 						method = Method::PUT;
-				} else if(methodAndPath[0] == "DELETE") {
+				} else if(method_and_path[0] == "DELETE") {
 						method = Method::DELETE;
 				}
 
-				std::string path = methodAndPath[1];
+				std::string path = method_and_path[1];
 				std::unordered_map<std::string, std::string> headers;
 				std::string body;
 
