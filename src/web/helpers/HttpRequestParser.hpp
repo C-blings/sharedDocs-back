@@ -13,10 +13,40 @@ namespace web_layout{
             static HttpRequest GetHttpRequest(const std::string& request){
                 std::vector<std::string> request_lines;
                 boost::split(request_lines, request, boost::is_any_of("\n\r"), boost::token_compress_on);
+				
+				std::vector<std::string> methodAndPath;
+				boost::split(methodAndPath, request_lines[0], boost::is_any_of(" "), boost::token_compress_on);
 
-                return HttpRequest(Method::GET, "", "", "");
+				Method method;
+				if(methodAndPath[0] == "GET") {
+						method = Method::GET;
+				} else {
+						method = Method::POST;
+				}
+
+				std::string path = methodAndPath[1];
+
+				std::cerr << request << std::endl << std::endl;
+
+				std::string headers = "";
+				std::string body = "";
+
+
+				bool isBody = false;
+				for(int i = 1; i < request_lines.size(); ++i) {
+						if(isBody) {
+								body += request_lines[i] + '\n';
+						} else if(request_lines[i] == "") {
+								std::cerr << "!?!?!?!?\n";
+								isBody = true;
+						} else {
+								headers += request_lines[i] + '\n';
+						}
+				}
+
+                return HttpRequest(method, path, headers, body);
             }
 
     };
 
-} // namespace web_layout
+}
