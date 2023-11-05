@@ -12,7 +12,14 @@ namespace web_layout{
 
     private:
         static HttpResponse CORSHandler(const HttpRequest& request) {
-            return HttpResponse(200, "OK", {{"Cache-Control", "no-cache, private"}, {"Content-Type", "text/html"}}, "CORS DONE!");
+            std::unordered_map<std::string, std::string> headers = {
+                    {"Cache-Control", "max-age=604800, must-revalidate"},
+                    {"Age:", "100"},
+                    {"Access-Control-Allow-Origin", "*"},
+                    {"Access-Control-Allow-Methods", "POST, GET, OPTIONS"},
+                    {"Access-Control-Allow-Headers", "Content-Type"}
+            };
+            return HttpResponse(200, "OK", headers, "");
         }
     };
 }
