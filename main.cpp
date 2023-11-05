@@ -2,6 +2,8 @@
 #include "src/web/tcp_server/TCPServer.hpp"
 #include "src/web/models/servers/WebServer.hpp"
 #include "src/web/models/routers/RouterBase.hpp"
+
+#include "src/web/request_handlers/BasicContainer.hpp"
 #include "src/web/request_handlers/BasicContainer.hpp"
 
 int main(){

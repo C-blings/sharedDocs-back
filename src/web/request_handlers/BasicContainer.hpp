@@ -7,7 +7,7 @@ namespace web_layout{
     class BasicContainer : public RequestHandlersContainerBase {
     public:
         BasicContainer() : RequestHandlersContainerBase(Container({
-            {HandlerMatcher(Method::GET, std::regex("\/")), RootHandler}
+            {HandlerMatcher(Method::GET, std::regex("/")), RootHandler}
         })) {}
 
     private:

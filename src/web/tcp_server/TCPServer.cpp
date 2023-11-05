@@ -40,6 +40,7 @@ namespace web_layout{
 
             // handle user
             size_t request_size = recv(listener_, request_buffer, MAX_REQUEST_SIZE, 0);
+            std::cout << "REQUEST " << request_buffer << '\n';
             HttpRequest request = HttpRequestParser::GetHttpRequest(request_buffer);
 
             std::string response = handler->HandleRequest(request).AsString();
