@@ -9,9 +9,14 @@ namespace web_layout{
         }
         string_stream << "Cache-Control: no-cache, private\r\n";
         string_stream << "Content-Type: text/html\r\n";
-        string_stream << "Content-Length: " << body_.size() << "\r\n";
-        string_stream << "\r\n";
-        string_stream << body_;
+        if (body_.has_value()){
+            string_stream << "Content-Length: " << body_->size() << "\r\n";
+            string_stream << "\r\n";
+            string_stream << body_.value();
+        }else{
+            string_stream << "\r\n";
+        }
+
 
         return string_stream.str();
     }
