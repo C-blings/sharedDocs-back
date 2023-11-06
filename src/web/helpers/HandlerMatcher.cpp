@@ -13,7 +13,7 @@ namespace web_layout{
             std::string match_result = regex_match.str();
             regex_match_success = !match_result.empty() && request_path.size() == match_result.size();
         }
-        std::cout << method_ << ' ' << request.GetMethod() << '\n';
+
         return method_ == request.GetMethod() && regex_match_success;
     }
 }
