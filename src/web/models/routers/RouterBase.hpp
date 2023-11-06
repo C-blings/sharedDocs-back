@@ -22,11 +22,7 @@ namespace web_layout{
 
         Container(const Container& container) : container_(container.GetContainer()) {}
 
-        void AddValues(const std::vector<RequestHandlingPair>& container){
-            for (const RequestHandlingPair& pair : container){
-                container_.push_back(pair);
-            }
-        }
+        void AddValues(const std::vector<RequestHandlingPair>& container);
 
         void AddValues(const Container& container){
             AddValues(container.GetContainer());
@@ -44,20 +40,8 @@ namespace web_layout{
     public:
         RouterBase(const Container& route_map) : route_map_(route_map) {}
 
-        RequestHandler GetRequestHandler(const HttpRequest& request) const {
-            RequestHandler* founded_handler = nullptr;
-            for (auto [matcher, handler] : route_map_.GetContainer()){
-                if(matcher.Match(request)){
-                    founded_handler = &handler;
-                }
-            }
-
-            if (!founded_handler){
-                throw std::runtime_error("No handler founded ");
-            }else{
-                return *founded_handler;
-            }
-        };
+        // find request handler
+        RequestHandler GetRequestHandler(const HttpRequest& request) const;
 
     private:
         const Container route_map_;

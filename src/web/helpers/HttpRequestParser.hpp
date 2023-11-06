@@ -20,6 +20,8 @@ namespace web_layout{
                 {"OPTIONS", Method::OPTIONS},
             };
         public:
+
+            // cast string request to data structure
             static HttpRequest GetHttpRequest(const std::string& request){
                 std::vector<std::string> request_lines;
                 boost::split(request_lines, request, boost::is_any_of("\n\r"), boost::token_compress_on);

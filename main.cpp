@@ -4,11 +4,11 @@
 #include "src/web/models/routers/RouterBase.hpp"
 
 #include "src/web/request_handlers/BasicContainer.hpp"
-#include "src/web/request_handlers/BasicContainer.hpp"
+#include "src/web/request_handlers/CORSContainers.hpp"
 
 int main(){
     std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {
-            web_layout::BasicContainer(),
+            web_layout::BasicContainer(), web_layout::CORSContainer(),
     };
 
     web_layout::Container full_container;

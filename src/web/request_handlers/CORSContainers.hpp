@@ -7,7 +7,7 @@ namespace web_layout{
     class CORSContainer : public RequestHandlersContainerBase {
     public:
         CORSContainer() : RequestHandlersContainerBase(Container({
-            {HandlerMatcher(Method::GET, std::regex(".*")), RootHandler}
+            {HandlerMatcher(Method::OPTIONS, std::regex(".*")), CORSHandler}
         })) {}
 
     private:
@@ -19,7 +19,7 @@ namespace web_layout{
                     {"Access-Control-Allow-Methods", "POST, GET, OPTIONS"},
                     {"Access-Control-Allow-Headers", "Content-Type"}
             };
-            return HttpResponse(200, "OK", headers, "");
+            return HttpResponse(200, "OK", headers, "CORS");
         }
     };
 }
