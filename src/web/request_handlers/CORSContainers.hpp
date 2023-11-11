@@ -6,9 +6,11 @@ namespace web_layout{
 
     class CORSContainer : public RequestHandlersContainerBase {
     public:
-        CORSContainer() : RequestHandlersContainerBase(Container({
-            {HandlerMatcher(Method::OPTIONS, std::regex(".*")), CORSHandler}
-        })) {}
+        CORSContainer() {
+            Container container;
+            container.AddValue({HandlerMatcher(Method::OPTIONS, std::regex(".*")), CORSHandler});
+            SetContainer(container);
+        }
 
     private:
         static HttpResponse CORSHandler(const HttpRequest& request) {

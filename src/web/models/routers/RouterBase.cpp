@@ -19,8 +19,12 @@ namespace web_layout{
     };
 
     void Container::AddValues(const std::vector<RequestHandlingPair>& container){
-        for (const RequestHandlingPair& pair : container){
-            container_.push_back(pair);
+        for (const RequestHandlingPair& handling_pair : container){
+            AddValue(handling_pair);
         }
+    }
+
+    void Container::AddValue(const web_layout::RequestHandlingPair& handling_pair) {
+        container_.push_back(handling_pair);
     }
 }

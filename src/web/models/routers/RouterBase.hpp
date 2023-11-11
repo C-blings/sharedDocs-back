@@ -24,6 +24,8 @@ namespace web_layout{
 
         void AddValues(const std::vector<RequestHandlingPair>& container);
 
+        void AddValue(const RequestHandlingPair& handling_pair);
+
         void AddValues(const Container& container){
             AddValues(container.GetContainer());
         }

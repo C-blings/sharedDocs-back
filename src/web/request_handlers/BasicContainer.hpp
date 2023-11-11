@@ -6,9 +6,12 @@ namespace web_layout{
 
     class BasicContainer : public RequestHandlersContainerBase {
     public:
-        BasicContainer() : RequestHandlersContainerBase(Container({
-            {HandlerMatcher(Method::GET, std::regex("/")), RootHandler}
-        })) {}
+        BasicContainer(){
+            Container container;
+            container.AddValue({HandlerMatcher(Method::GET, std::regex("/")), RootHandler});
+
+            SetContainer(container);
+        }
 
     private:
         static HttpResponse RootHandler (const HttpRequest& request) {
