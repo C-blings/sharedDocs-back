@@ -1,7 +1,7 @@
 COMPILER = g++
 NAME = server
 TESTS_NAME = run_tests
-SRC_FILES = $(shell find ./src -name '*.cpp')
+SRC_FILES = $(shell find ./src -name '*.cpp' && find ./libs -name "*.cpp")
 TESTS_FILES = $(shell find ./tests -name '*.cpp')
 TESTING_FLAGS = -lgtest -lcurl
 RUN_MAIN_FILE = main.cpp
