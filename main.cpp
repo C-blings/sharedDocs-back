@@ -9,7 +9,7 @@
 
 int main(){
     std::cout << "LOG\n";
-    Logger(Debug) << "hello";
+    Logger(Debug).Print(1, "hello");
 //    std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {
 //            web_layout::BasicContainer(), web_layout::CORSContainer(),
 //    };

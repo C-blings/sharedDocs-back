@@ -29,8 +29,8 @@ std::string Logger::GetDateTime() const{
             std::chrono::system_clock::now()
     );
     char buffer[90];
-    tm* timeinfo = localtime(&time);
-    strftime(buffer, sizeof(buffer), DATE_TIME_FORMAT.c_str(), timeinfo);
+    tm* time_info = localtime(&time);
+    strftime(buffer, sizeof(buffer), DATE_TIME_FORMAT.c_str(), time_info);
     return buffer;
 }
 
@@ -38,15 +38,4 @@ void Logger::WriteToFile(const std::string& file_name, const std::string& value)
     std::ofstream output_file(file_name, std::ios::app);
     output_file << value;
     output_file.close();
-}
-
-void Logger::operator<<(const std::string& value) const {
-    std::stringstream os;
-    os << FormatPrefix() << value << '\n';
-    const std::string log = os.str();
-
-    *console_stream_ << log;
-
-    WriteToFile(DEFAULT_LOGS, log);
-    WriteToFile(enum_to_file_path_.at(log_level_), log);
 }
