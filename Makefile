@@ -1,8 +1,9 @@
 COMPILER = g++
 NAME = server
 TESTS_NAME = run_tests
-SRC_FILES = $(shell find ./src -name '*.cpp' && find ./libs -name "*.cpp")
+SRC_FILES = $(shell find ./src -name '*.cpp')
 TESTS_FILES = $(shell find ./tests -name '*.cpp')
+CUSTOM_LIBS = $(shell find ./libs/bin -name '*.a')
 TESTING_FLAGS = -lgtest -lcurl
 RUN_MAIN_FILE = main.cpp
 TEST_MAIN_FILE = tests.cpp
@@ -15,7 +16,7 @@ all: test compile run
 .PHONY: compile 
 compile: $(RUN_MAIN_FILE)
 	mkdir -p $(BUILD_FOLDER)
-	$(COMPILER) -g $(RUN_MAIN_FILE) $(SRC_FILES) -o $(NAME)
+	$(COMPILER) -g $(RUN_MAIN_FILE) $(CUSTOM_LIBS) $(SRC_FILES) -o $(NAME)
 	mv $(NAME) $(BUILD_FOLDER)
 
 .PHONY: run
@@ -41,7 +42,7 @@ docker_install:
 .PHONY: test
 test: $(TEST_MAIN_FILE)
 	mkdir -p $(BUILD_FOLDER)
-	$(COMPILER) -g $(TEST_MAIN_FILE) $(SRC_FILES) $(TESTS_FILES) -o $(TESTS_NAME) $(TESTING_FLAGS)
+	$(COMPILER) -g $(TEST_MAIN_FILE) $(SRC_FILES) $(TESTS_FILES) $(CUSTOM_LIBS) -o $(TESTS_NAME) $(TESTING_FLAGS)
 	sudo mv $(TESTS_NAME) $(BUILD_FOLDER)
 	valgrind ./$(BUILD_FOLDER)/$(TESTS_NAME)
 

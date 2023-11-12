@@ -16,13 +16,17 @@ class Logger {
 public:
     Logger(LogLevel log_level);
 
-    template<typename T, typename... Values>
+    template<typename T, typename... Values, typename = decltype(
+            std::declval<std::ostream&>() << std::declval<T>()
+            )>
     void Print(const T& value, Values... values) {
         current_stream_ << value;
         Print(values...);
     }
 
-    template<typename T>
+    template<typename T, typename = decltype(
+            std::declval<std::ostream&>() << std::declval<T>()
+            )>
     void Print(const T& value) {
         current_stream_ << value;
 
