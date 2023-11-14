@@ -46,7 +46,9 @@ namespace web_layout{
 
 					std::vector<std::string> header;
 
-					boost::split(header, request_lines[i], boost::is_any_of(": "), boost::token_compress_on);
+					boost::split(header,  request_lines[i], boost::is_any_of(": "), boost::token_compress_on);
+                    
+                    headers.emplace(header[0], header[1]);
 				}
 
 				for(; i < request_lines.size(); ++i) {
