@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 #include <iostream>
 #include "src/web/helpers/HandlerMatcher.hpp"
 #include "src/web/request_handlers/RequestHandlersContainerBase.hpp"
-=======
->>>>>>> fe6e4e6e5e846fb764857894bcd3365be000a0f8
 #include "src/web/tcp_server/TCPServer.hpp"
 #include "src/web/models/servers/WebServer.hpp"
 #include "src/web/models/routers/RouterBase.hpp"
