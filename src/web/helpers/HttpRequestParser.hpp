@@ -1,7 +1,10 @@
 #pragma once
 
 #include "../models/HttpRequest.hpp"
+#include <boost/algorithm/string/trim.hpp>
+#include <boost/type_traits/is_const.hpp>
 #include <ostream>
+#include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -33,17 +36,24 @@ namespace web_layout{
 
 				int i;
 				for(i = 1; i < request_lines.size(); ++i) {
+                        boost::trim(request_lines[i]);
+
 						if(request_lines[i].empty()) {
 								++i;
                                 break;
 						}
 						std::vector<std::string> header;
+
 						boost::split(header, request_lines[i], boost::is_any_of(": "), boost::token_compress_on);
 						headers.emplace(header[0],header[1]);
 				}
 
 				for(; i < request_lines.size(); ++i) {
-						body += request_lines[i] + '\n';
+                        boost::trim(request_lines[i]);
+						body += request_lines[i];
+                        if(i != request_lines.size() - 1) {
+                            body += "\n";
+                        }
 				}
 
                 return HttpRequest(method, path, headers, body);

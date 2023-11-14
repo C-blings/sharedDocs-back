@@ -22,6 +22,10 @@ namespace web_layout{
 
         std::string GetPath() const { return path_; }
 
+        std::unordered_map<std::string,std::string> GetHeaders() const { return headers_; }
+
+        std::string GetBody() const { return body_; }
+
     private:
         const Method method_;
         const std::string path_;
