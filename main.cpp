@@ -1,5 +1,4 @@
 #include <iostream>
-#include <new>
 #include "src/web/helpers/HandlerMatcher.hpp"
 #include "src/web/request_handlers/RequestHandlersContainerBase.hpp"
 #include "src/web/tcp_server/TCPServer.hpp"
