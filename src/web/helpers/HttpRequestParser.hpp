@@ -17,9 +17,12 @@ namespace web_layout{
                 {"GET", Method::GET},
                 {"POST", Method::POST},
                 {"PUT", Method::PUT},
-                {"DELETE", Method::DELETE}
+                {"DELETE", Method::DELETE},
+                {"OPTIONS", Method::OPTIONS},
             };
         public:
+
+            // cast string request to data structure
             static HttpRequest GetHttpRequest(const std::string& request){
                 std::vector<std::string> request_lines;
                 boost::split(request_lines, request, boost::is_any_of("\n\r"), boost::token_compress_on);
@@ -34,16 +37,16 @@ namespace web_layout{
 
 				int i;
 				for(i = 1; i < request_lines.size(); ++i) {
-                        boost::trim(request_lines[i]);
+                    boost::trim(request_lines[i]);
 
-						if(request_lines[i].empty()) {
-								++i;
-                                break;
-						}
-						std::vector<std::string> header;
+					if(request_lines[i].empty()) {
+							++i;
+                            break;
+					}
 
-						boost::split(header, request_lines[i], boost::is_any_of(": "), boost::token_compress_on);
-						headers.emplace(header[0],header[1]);
+					std::vector<std::string> header;
+
+					boost::split(header, request_lines[i], boost::is_any_of(": "), boost::token_compress_on);
 				}
 
 				for(; i < request_lines.size(); ++i) {

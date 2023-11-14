@@ -10,10 +10,14 @@
 namespace web_layout{
     class RequestHandlersContainerBase {
     public:
-        RequestHandlersContainerBase(const Container& container) noexcept : container_(container) {}
+        RequestHandlersContainerBase() = default;
 
         Container GetContainer() const {
             return container_;
+        }
+
+        void SetContainer(Container container){
+            container_ = container;
         }
 
     protected:

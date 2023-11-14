@@ -3,19 +3,20 @@ NAME = server
 TESTS_NAME = run_tests
 SRC_FILES = $(shell find ./src -name '*.cpp')
 TESTS_FILES = $(shell find ./tests -name '*.cpp')
-TESTING_FLAGS = -lgtest
+CUSTOM_LIBS = $(shell find ./libs/bin -name '*.a')
+TESTING_FLAGS = -lgtest -lcurl
 RUN_MAIN_FILE = main.cpp
 TEST_MAIN_FILE = tests.cpp
 BUILD_FOLDER = build
-DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev
+DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev
 
 .PHONY: all
-all: compile run
+all: test compile run
 
 .PHONY: compile 
 compile: $(RUN_MAIN_FILE)
 	mkdir -p $(BUILD_FOLDER)
-	$(COMPILER) -g $(RUN_MAIN_FILE) $(SRC_FILES) -o $(NAME)
+	$(COMPILER) -g $(RUN_MAIN_FILE) $(CUSTOM_LIBS) $(SRC_FILES) -o $(NAME)
 	mv $(NAME) $(BUILD_FOLDER)
 
 .PHONY: run
@@ -41,7 +42,7 @@ docker_install:
 .PHONY: test
 test: $(TEST_MAIN_FILE)
 	mkdir -p $(BUILD_FOLDER)
-	$(COMPILER) -g $(TEST_MAIN_FILE) $(SRC_FILES) $(TESTS_FILES) -o $(TESTS_NAME) $(TESTING_FLAGS)
+	$(COMPILER) -g $(TEST_MAIN_FILE) $(SRC_FILES) $(TESTS_FILES) $(CUSTOM_LIBS) -o $(TESTS_NAME) $(TESTING_FLAGS)
 	sudo mv $(TESTS_NAME) $(BUILD_FOLDER)
 	valgrind ./$(BUILD_FOLDER)/$(TESTS_NAME)
 

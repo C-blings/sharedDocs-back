@@ -9,6 +9,7 @@ namespace web_layout{
         POST,
         PUT,
         DELETE,
+        OPTIONS
     };
 
     class HttpRequest{
