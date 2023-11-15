@@ -8,7 +8,7 @@ TESTING_FLAGS = -lgtest -lcurl
 RUN_MAIN_FILE = main.cpp
 TEST_MAIN_FILE = tests.cpp
 BUILD_FOLDER = build
-DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev
+DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib
 
 .PHONY: all
 all: test compile run
