@@ -8,3 +8,5 @@
 
 # Q: Как запустить тесты?
 ## A: make test - запустит все тесты из папочки tests
+
+[Uploading untitled.pdf…]()
