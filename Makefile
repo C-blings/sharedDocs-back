@@ -5,7 +5,7 @@ SRC_FILES = $(shell find ./src -name '*.cpp' && find ./libs/file_helpers -name '
 CUSTOM_LIBS = $(shell find ./libs/bin -name '*.a')
 INCLUDE_DIRS = -I ./src -I ./libs -I ./codegen
 BUILD_FOLDER = build
-DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev
+DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib
 
 TESTS_NAME = run_tests
 TESTS_FILES = $(shell find ./tests -name '*.cpp')
