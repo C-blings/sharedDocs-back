@@ -5,10 +5,11 @@ SRC_FILES = $(shell find ./src -name '*.cpp')
 TESTS_FILES = $(shell find ./tests -name '*.cpp')
 CUSTOM_LIBS = $(shell find ./libs/bin -name '*.a')
 TESTING_FLAGS = -lgtest -lcurl
+RUN_FLAGS = -lpqxx -lpq
 RUN_MAIN_FILE = main.cpp
 TEST_MAIN_FILE = tests.cpp
 BUILD_FOLDER = build
-DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib
+DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib libpqxx-6.4
 
 .PHONY: all
 all: test compile run
@@ -16,7 +17,7 @@ all: test compile run
 .PHONY: compile 
 compile: $(RUN_MAIN_FILE)
 	mkdir -p $(BUILD_FOLDER)
-	$(COMPILER) -g $(RUN_MAIN_FILE) $(CUSTOM_LIBS) $(SRC_FILES) -o $(NAME)
+	$(COMPILER) -g $(RUN_MAIN_FILE) $(CUSTOM_LIBS) $(SRC_FILES) $(RUN_FLAGS) -o $(NAME)
 	mv $(NAME) $(BUILD_FOLDER)
 
 .PHONY: run
