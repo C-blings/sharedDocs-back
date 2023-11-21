@@ -1,14 +1,13 @@
-//
-// Created by sliderer on 21.11.23.
-//
+#pragma once
 
-#ifndef SHAREDDOCS_BACK_DATABASECONTROLLER_H
-#define SHAREDDOCS_BACK_DATABASECONTROLLER_H
+#include <vector>
+#include <string>
 
-
-class DatabaseController {
-
-};
-
-
-#endif //SHAREDDOCS_BACK_DATABASECONTROLLER_H
+namespace database{
+    template<typename Connection, typename Store>
+    class DatabaseController {
+    public:
+        virtual std::vector<Store> HandleQuery(Connection& connection,
+                                       const std::string& query, const std::vector<Store>& parameters) = 0;
+    };
+}
