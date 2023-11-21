@@ -1,14 +1,14 @@
-//
-// Created by sliderer on 21.11.23.
-//
+#pragma once
 
-#ifndef SHAREDDOCS_BACK_DATABASECONNECTION_H
-#define SHAREDDOCS_BACK_DATABASECONNECTION_H
+#include <memory>
 
+namespace database{
+    template<typename T>
+    class DatabaseConnection{
+    public:
+       virtual std::shared_ptr<T> GetConnection() const = 0;
 
-class DatabaseConnection {
-
-};
-
-
-#endif //SHAREDDOCS_BACK_DATABASECONNECTION_H
+    protected:
+        std::shared_ptr<pqxx::connection> connection_;
+    };
+}
