@@ -2,6 +2,7 @@
 
 #include "../models/HttpRequest.hpp"
 #include <boost/algorithm/string/trim.hpp>
+#include <cmath>
 #include <ostream>
 #include <sstream>
 #include <string>
@@ -25,7 +26,7 @@ namespace web_layout{
             // cast string request to data structure
             static HttpRequest GetHttpRequest(const std::string& request){
                 std::vector<std::string> request_lines;
-                boost::split(request_lines, request, boost::is_any_of("\n\r"), boost::token_compress_on);
+                boost::split(request_lines, request, boost::is_any_of("\n\r"), boost::token_compress_off);
 				
 				std::vector<std::string> method_and_path;
 				boost::split(method_and_path, request_lines[0], boost::is_any_of(" "), boost::token_compress_on);
