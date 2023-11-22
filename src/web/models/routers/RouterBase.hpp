@@ -2,9 +2,11 @@
 
 #include <map>
 #include <functional>
-#include "../HttpRequest.hpp"
-#include "../../helpers/HandlerMatcher.hpp"
-#include "../HttpResponse.hpp"
+
+#include <web/models/HttpRequest.hpp>
+#include <web/models/HttpResponse.hpp>
+#include <web/helpers/HandlerMatcher.hpp>
+
 
 namespace web_layout{
     using RequestHandler = std::function<HttpResponse (const HttpRequest&)>;

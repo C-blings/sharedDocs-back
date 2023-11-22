@@ -7,12 +7,13 @@
 #include <cstdlib>
 #include <cstdio>
 #include <arpa/inet.h>
+#include <memory>
 #include <iostream>
 
-#include "../models/servers/ServerBase.hpp"
-#include "../helpers/HttpRequestParser.hpp"
-#include "../models/servers/WebServer.hpp"
-#include "../models/routers/RouterBase.hpp"
+#include <web/models/servers/ServerBase.hpp>
+#include <web/helpers/HttpRequestParser.hpp>
+#include <web/models/servers/WebServer.hpp>
+#include <web/models/routers/RouterBase.hpp>
 
 namespace web_layout
 {
@@ -24,7 +25,7 @@ namespace web_layout
         public:
             explicit TCPServer(const std::string& ip_address, int port);
 
-            void StartListen(ServerBase* handler);
+            void StartListen(std::shared_ptr<ServerBase> handler);
 
             ~TCPServer(){
                 close(listener_);
