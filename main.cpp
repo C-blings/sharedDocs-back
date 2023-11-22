@@ -1,12 +1,9 @@
-#include <iostream>
-#include "src/web/helpers/HandlerMatcher.hpp"
-#include "src/web/request_handlers/RequestHandlersContainerBase.hpp"
-#include "src/web/tcp_server/TCPServer.hpp"
-#include "src/web/models/servers/WebServer.hpp"
-#include "src/web/models/routers/RouterBase.hpp"
+#include <web/helpers/HandlerMatcher.hpp>
+#include <web/request_handlers/RequestHandlersContainerBase.hpp>
+#include <web/tcp_server/TCPServer.hpp>
 
-#include "src/web/request_handlers/BasicContainer.hpp"
-#include "src/web/request_handlers/CORSContainers.hpp"
+#include <web/request_handlers/BasicContainer.hpp>
+#include <web/request_handlers/CORSContainers.hpp>
 
 int main(){
     std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {
@@ -22,7 +19,7 @@ int main(){
     web_layout::RouterBase router(full_container);
     
     web_layout::TCPServer server("127.0.0.1", 80);
-    web_layout::WebServer* handler = new web_layout::WebServer(router);
+    std::shared_ptr<web_layout::WebServer> handler = std::make_shared<web_layout::WebServer>(router);
 
     server.StartListen(handler);
 

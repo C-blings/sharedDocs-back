@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../models/HttpRequest.hpp"
 #include <boost/algorithm/string/trim.hpp>
 #include <cmath>
 #include <ostream>
@@ -9,6 +8,8 @@
 #include <vector>
 #include <unordered_map>
 #include <boost/algorithm/string.hpp>
+
+#include <web/models/HttpRequest.hpp>
 
 namespace web_layout{
 

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ServerBase.hpp"
-#include "../routers/RouterBase.hpp"
+#include <web/models/servers/ServerBase.hpp>
+#include <web/models/routers/RouterBase.hpp>
 
 namespace web_layout{
 

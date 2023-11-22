@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../HttpRequest.hpp"
-#include "../HttpResponse.hpp"
+#include <web/models/HttpRequest.hpp>
+#include <web/models/HttpResponse.hpp>
 
 namespace web_layout{
 

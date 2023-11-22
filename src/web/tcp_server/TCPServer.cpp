@@ -23,7 +23,7 @@ namespace web_layout{
         }
     }
 
-    void TCPServer::StartListen(ServerBase* handler) {
+    void TCPServer::StartListen(std::shared_ptr<ServerBase> handler) {
         listen(socket_, MAX_USERS_COUNT);
 
         char request_buffer[MAX_REQUEST_SIZE];
