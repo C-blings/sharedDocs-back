@@ -7,7 +7,7 @@ namespace web_layout{
 
     class ServerBase{
     public:
-        virtual HttpResponse HandleRequest(const HttpRequest& http_request) = 0;
+        virtual HttpResponse HandleRequest(const HttpRequest& http_request) const = 0;
     };
 
 } // namespace web_layout

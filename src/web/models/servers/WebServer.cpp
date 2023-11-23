@@ -1,7 +1,7 @@
 #include "WebServer.hpp"
 
 namespace web_layout{
-    HttpResponse WebServer::HandleRequest(const HttpRequest& request){
+    HttpResponse WebServer::HandleRequest(const HttpRequest& request) const {
         RequestHandler handler;
 
         try{

@@ -9,7 +9,7 @@ namespace web_layout{
     public:
      WebServer(const RouterBase& router) : router_(router) {}
 
-     HttpResponse HandleRequest(const HttpRequest& request) override;
+     HttpResponse HandleRequest(const HttpRequest& request) const override;
 
     private:
         RouterBase router_;
