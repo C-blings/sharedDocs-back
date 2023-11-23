@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 [ 2023-11-21 01:24:00 DEBUG ] 1hello
 [ 2023-11-21 01:24:53 DEBUG ] 1hello
+=======
+[ 2023-11-23 16:55:29 DEBUG ] Server restart
+[ 2023-11-23 16:57:17 DEBUG ] Server restart
+[ 2023-11-23 16:58:14 DEBUG ] Server restart
+[ 2023-11-23 23:45:51 DEBUG ] Server restart
+>>>>>>> 191dafb (feat back: add logs)

@@ -5,6 +5,8 @@
 #include <web/request_handlers/BasicContainer.hpp>
 #include <web/request_handlers/CORSContainers.hpp>
 
+#include <logging/Logger.hpp>
+
 int main(){
     std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {
             web_layout::BasicContainer(), web_layout::CORSContainer(),
@@ -17,7 +19,7 @@ int main(){
     }
 
     web_layout::RouterBase router(full_container);
-    
+    Logger(Debug).Print("Server restart");
     web_layout::TCPServer server("127.0.0.1", 80);
     std::shared_ptr<web_layout::WebServer> handler = std::make_shared<web_layout::WebServer>(router);
 
