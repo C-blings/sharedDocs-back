@@ -6,8 +6,11 @@
 #include <web/request_handlers/CORSContainers.hpp>
 
 #include <logging/Logger.hpp>
+#include <codegen/RequestHandlersParser.hpp>
 
 int main(){
+    codegen::RequestHandlersParser::ParseRequestHandlers({"./src/web/request_handlers"});
+
     std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {
             web_layout::BasicContainer(), web_layout::CORSContainer(),
     };

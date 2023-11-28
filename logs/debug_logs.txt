@@ -7,3 +7,16 @@
 [ 2023-11-23 16:58:14 DEBUG ] Server restart
 [ 2023-11-23 23:45:51 DEBUG ] Server restart
 >>>>>>> 191dafb (feat back: add logs)
+[ 2023-11-24 11:38:24 DEBUG ] Server restart
+[ 2023-11-24 11:44:37 DEBUG ] Server restart
+[ 2023-11-24 12:00:55 DEBUG ] Server restart
+[ 2023-11-24 12:02:26 DEBUG ] Server restart
+[ 2023-11-24 12:03:14 DEBUG ] Server restart
+[ 2023-11-24 12:04:37 DEBUG ] Server restart
+[ 2023-11-24 14:12:13 DEBUG ] Server restart
+[ 2023-11-28 13:37:11 DEBUG ] Server restart
+[ 2023-11-28 13:38:49 DEBUG ] Server restart
+[ 2023-11-28 13:43:06 DEBUG ] Server restart
+[ 2023-11-28 13:43:47 DEBUG ] Server restart
+[ 2023-11-28 14:04:10 DEBUG ] Server restart
+[ 2023-11-28 14:18:24 DEBUG ] Server restart
