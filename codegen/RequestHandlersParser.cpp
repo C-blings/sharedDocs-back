@@ -5,6 +5,8 @@
 #include <iostream>
 #include <optional>
 
+#include <file_reader/FileReader.hpp>
+
 namespace codegen{
     const std::string RequestHandlersParser::kBasicClassName = "RequestHandlersContainerBase";
 
@@ -44,10 +46,11 @@ namespace codegen{
     }
 
     std::vector<std::string> RequestHandlersParser::ParseFile(const std::filesystem::path& file_path) {
-        std::fstream file(file_path);
-        std::string line;
+        file_reader::FileReader file_reader(file_path);
+        std::vector<std::string> file_parts = file_reader.GetFileTextParts(" ");
+
         std::vector<std::string> class_data, result;
-        while(file >> line){
+        for (const std::string& line : file_parts){
             if(class_data.size() < 5 || line == "class"){
                 class_data.emplace_back(line);
             } else if (class_data.size() == 5){
