@@ -1,7 +1,7 @@
 COMPILER = g++
 NAME = server
 TESTS_NAME = run_tests
-SRC_FILES = $(shell find ./src -name '*.cpp' && find ./libs/file_reader -name '*.cpp' && find ./libs/formats -name '*.cpp')
+SRC_FILES = $(shell find ./src -name '*.cpp' && find ./libs/file_helpers -name '*.cpp' && find ./libs/formats -name '*.cpp')
 TESTS_FILES = $(shell find ./tests -name '*.cpp')
 CUSTOM_LIBS = $(shell find ./libs/bin -name '*.a')
 INCLUDE_DIRS = -I ./src -I ./libs

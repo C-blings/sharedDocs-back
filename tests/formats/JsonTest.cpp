@@ -15,7 +15,7 @@ TEST(CheckAllFields, JsonTest){
     const std::string host("127.0.0.1");
     const int port = 80;
     const std::string value("string");
-    
+
     JsonValue json(input_value);
     EXPECT_EQ(json.GetValue<int>("port"), port);
     EXPECT_EQ(json.GetValue<std::string>("host"), host);
