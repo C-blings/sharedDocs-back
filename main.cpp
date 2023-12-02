@@ -7,8 +7,6 @@
 
 #include <logging/Logger.hpp>
 
-#include <file_reader/FileReader.hpp>
-
 int main(){
 
     std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {

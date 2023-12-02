@@ -10,6 +10,6 @@ TEST(CheckFileReading, FileReaderTest){
     file_helpers::FileWriter file_writer("tests/helpers/files/input.txt");
     file_writer.WriteToFile(first_part, second_part);
     file_helpers::FileReader file_reader("tests/helpers/files/input.txt");
-    
+
     EXPECT_EQ(file_reader.GetFileText(), first_part + second_part);
 }
