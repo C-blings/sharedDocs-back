@@ -1,19 +1,27 @@
 COMPILER = g++
 NAME = server
-TESTS_NAME = run_tests
-SRC_FILES = $(shell find ./src -name '*.cpp')
-TESTS_FILES = $(shell find ./tests -name '*.cpp')
+
+SRC_FILES = $(shell find ./src -name '*.cpp' && find ./libs/file_helpers -name '*.cpp' && find ./libs/formats -name '*.cpp')
 CUSTOM_LIBS = $(shell find ./libs/bin -name '*.a')
-INCLUDE_DIRS = -I ./src -I ./libs
-TESTING_FLAGS = $(INCLUDE_DIRS) -lgtest -lcurl
-RUN_FLAGS = $(INCLUDE_DIRS)
-RUN_MAIN_FILE = main.cpp
-TEST_MAIN_FILE = tests.cpp
+INCLUDE_DIRS = -I ./src -I ./libs -I ./codegen
 BUILD_FOLDER = build
 DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev
 
+TESTS_NAME = run_tests
+TESTS_FILES = $(shell find ./tests -name '*.cpp')
+TESTING_FLAGS = $(INCLUDE_DIRS) -lgtest -lcurl -ljsoncpp
+TEST_MAIN_FILE = tests.cpp
+
+RUN_FLAGS = $(INCLUDE_DIRS) -ljsoncpp
+RUN_MAIN_FILE = main.cpp
+
+CODEGEN_MAIN_FILE = codegen.cpp
+CODEGEN_FILES = $(shell find ./codegen -name '*.cpp')
+CODEGEN_FLAGS = $(INCLUDE_DIRS) -ljsoncpp
+CODEGEN_NAME = codegen_file
+
 .PHONY: all
-all: compile run
+all: codegen compile run
 
 .PHONY: compile 
 compile: $(RUN_MAIN_FILE)
@@ -25,9 +33,23 @@ compile: $(RUN_MAIN_FILE)
 run:
 	valgrind ./$(BUILD_FOLDER)/$(NAME)
 
+.PHONY: codegen
+codegen: $(CODEGEN_MAIN_FILE)
+	mkdir -p $(BUILD_FOLDER)
+	$(COMPILER) -g $(CODEGEN_MAIN_FILE) $(CODEGEN_FILES) $(CUSTOM_LIBS) -o $(CODEGEN_NAME) $(CODEGEN_FLAGS)
+	sudo mv $(CODEGEN_NAME) $(BUILD_FOLDER)
+	valgrind ./$(BUILD_FOLDER)/$(CODEGEN_NAME)
+
 .PHONY: install_deps
 install_deps:
 	sudo apt-get install $(DEPS) -y
+
+.PHONY: test
+test: $(TEST_MAIN_FILE)
+	mkdir -p $(BUILD_FOLDER)
+	$(COMPILER) -g $(TEST_MAIN_FILE) $(SRC_FILES) $(TESTS_FILES) $(CUSTOM_LIBS) -o $(TESTS_NAME) $(TESTING_FLAGS)
+	sudo mv $(TESTS_NAME) $(BUILD_FOLDER)
+	valgrind ./$(BUILD_FOLDER)/$(TESTS_NAME)
 
 .PHONY: clean
 clean:
@@ -40,11 +62,3 @@ docker_install:
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 	apt-cache policy docker-ce
 	sudo apt install docker-ce
-
-.PHONY: test
-test: $(TEST_MAIN_FILE)
-	mkdir -p $(BUILD_FOLDER)
-	$(COMPILER) -g $(TEST_MAIN_FILE) $(SRC_FILES) $(TESTS_FILES) $(CUSTOM_LIBS) -o $(TESTS_NAME) $(TESTING_FLAGS)
-	sudo mv $(TESTS_NAME) $(BUILD_FOLDER)
-	valgrind ./$(BUILD_FOLDER)/$(TESTS_NAME)
-
