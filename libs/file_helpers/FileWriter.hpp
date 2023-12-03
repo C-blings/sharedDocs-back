@@ -20,7 +20,7 @@ namespace file_helpers{
             stream_ << value;
             std::string text = stream_.str();
             stream_.clear();
-            if (!std::filesystem::exists(file_path_) ||
+            if (std::filesystem::exists(file_path_) &&
                 !std::filesystem::is_regular_file(file_path_)){
                 throw std::runtime_error("Not relevant file path: not exists or not regular file");
             }

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <optional>
 
-#include <file_reader/FileReader.hpp>
+#include <file_helpers/FileReader.hpp>
 
 namespace codegen{
     const std::string RequestHandlersParser::kBasicClassName = "RequestHandlersContainerBase";
@@ -15,7 +15,6 @@ namespace codegen{
         for(const std::string& path : paths){
             std::vector<std::string> directory_handlers = ParseDirectory(path);
             for (auto& handler : directory_handlers){
-                std::cout << handler << '\n';
                 result.emplace_back(std::move(handler));
             }
         }
@@ -46,18 +45,16 @@ namespace codegen{
     }
 
     std::vector<std::string> RequestHandlersParser::ParseFile(const std::filesystem::path& file_path) {
-        file_reader::FileReader file_reader(file_path);
+        file_helpers::FileReader file_reader(file_path);
         std::vector<std::string> file_parts = file_reader.GetFileTextParts(" ");
 
-        std::vector<std::string> class_data, result;
-        for (const std::string& line : file_parts){
-            if(class_data.size() < 5 || line == "class"){
-                class_data.emplace_back(line);
-            } else if (class_data.size() == 5){
-                if (class_data.back() == kBasicClassName){
-                    result.emplace_back(std::move(class_data.at(1)));
-                }
-                class_data.clear();
+        std::vector<std::string> result;
+        for (int i = 0; i < file_parts.size(); ++i){
+            if (file_parts[i] == "class" &&
+                i + 4 < file_parts.size() &&
+                file_parts[i + 4] == kBasicClassName){
+
+                result.push_back(file_parts[i + 1]);
             }
         }
         return result;

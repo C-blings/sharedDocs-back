@@ -17,11 +17,11 @@ RUN_MAIN_FILE = main.cpp
 
 CODEGEN_MAIN_FILE = codegen.cpp
 CODEGEN_FILES = $(shell find ./codegen -name '*.cpp')
-CODEGEN_FLAGS = $(INCLUDE_DIRS)
-CODEGEN_NAME = codegen_exec
+CODEGEN_FLAGS = $(INCLUDE_DIRS) -ljsoncpp
+CODEGEN_NAME = codegen_file
 
 .PHONY: all
-all: compile run
+all: codegen compile run
 
 .PHONY: compile 
 compile: $(RUN_MAIN_FILE)
@@ -36,7 +36,7 @@ run:
 .PHONY: codegen
 codegen: $(CODEGEN_MAIN_FILE)
 	mkdir -p $(BUILD_FOLDER)
-	$(COMPILER) -g $(CODEGEN_MAIN_FILE) $(CODEGEN_FILES1) $(CUSTOM_LIBS) -o $(CODEGEN_NAME) $(CODEGEN_FLAGS)
+	$(COMPILER) -g $(CODEGEN_MAIN_FILE) $(CODEGEN_FILES) $(CUSTOM_LIBS) -o $(CODEGEN_NAME) $(CODEGEN_FLAGS)
 	sudo mv $(CODEGEN_NAME) $(BUILD_FOLDER)
 	valgrind ./$(BUILD_FOLDER)/$(CODEGEN_NAME)
 

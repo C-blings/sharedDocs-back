@@ -1,29 +1,53 @@
 #pragma once
+#define FMT_HEADER_ONLY
 
 #include <sstream>
 #include <iostream>
+#include <fmt/format.h>
+#include <filesystem>
+
 #include <RequestHandlersParser.hpp>
+#include <file_helpers/FileReader.hpp>
+#include <file_helpers/FileWriter.hpp>
+#include <formats/json/Json.hpp>
 
 namespace codegen{
     class MainGenerator{
     public:
         MainGenerator() = delete;
 
-        static void GenerateMain(){
+        static void GenerateMain(const std::filesystem::path& config_path, const std::string& file_name){
             std::ostringstream stream;
             FillIncludes(stream);
-            FillMainFunction(stream);
-            std::cout << stream.str() << '\n';
+            FillMainFunction(stream, config_path);
+            FillFile(stream.str(), file_name);
         }
 
     private:
 
-        static void FillMainFunction(std::ostream& stream){
-            stream << "int main() {\n";
+        static void FillFile(const std::string& text, const std::string& file_name){
+            file_helpers::FileWriter file_writer(file_name);
+            file_writer.WriteToFile(text);
+        }
+
+        static void FillMainFunction(std::ostream& stream, const std::filesystem::path& config_path){
+
             const std::vector<std::string> handlers = RequestHandlersParser::ParseRequestHandlers(kHandlersDirectory);
 
-            stream << "    std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {\n"
-            "           BasicContainer(), web_layout::CORSContainer(),\n";
+            if (!std::filesystem::exists(config_path) ||
+                !std::filesystem::is_regular_file(config_path)){
+                throw std::runtime_error("Can not open config file");
+            }
+
+            file_helpers::FileReader file_reader(config_path);
+            std::string text = file_reader.GetFileText();
+            formats::json::JsonValue config(text);
+            const std::string host = config.GetValue<std::string>("host");
+            const int port = config.GetValue<int>("port");
+
+            stream << "int main() {\n";
+
+            stream << "    std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {\n";
             for (const std::string& handler : handlers){
                 stream << "web_layout::" << handler << "(),";
             }
@@ -36,13 +60,15 @@ namespace codegen{
             "    }\n"
             "\n"
             "    web_layout::RouterBase router(full_container);\n"
-            "    Logger(Debug).Print(\"Server restart\");\n"
-            "    web_layout::TCPServer server(\"127.0.0.1\", 80);\n"
-            "    std::shared_ptr<web_layout::WebServer> handler = std::make_shared<web_layout::WebServer>(router);\n"
-            "\n"
-            "    server.StartListen(handler);";
+            "    Logger(Debug).Print(\"Server restart\");\n";
 
-            stream << "return 0; \n}";
+            stream << fmt::format("    web_layout::TCPServer server(\"{}\", {});\n", host, port);
+
+            stream << "    std::shared_ptr<web_layout::WebServer> handler = std::make_shared<web_layout::WebServer>(router);\n"
+            "\n"
+            "    server.StartListen(handler);\n";
+
+            stream << "    return 0; \n}";
         }
 
         static void FillIncludes(std::ostringstream& stream){
