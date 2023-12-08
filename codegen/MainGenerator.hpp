@@ -39,6 +39,7 @@ namespace codegen{
                 throw std::runtime_error("Can not open config file");
             }
 
+            //parse host and port form config
             file_helpers::FileReader file_reader(config_path);
             std::string text = file_reader.GetFileText();
             formats::json::JsonValue config(text);
@@ -46,7 +47,7 @@ namespace codegen{
             const int port = config.GetValue<int>("port");
 
             stream << "int main() {\n";
-
+            // set request handlers array
             stream << "    std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {\n";
             for (const std::string& handler : handlers){
                 stream << "web_layout::" << handler << "(),";

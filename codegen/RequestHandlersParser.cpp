@@ -12,6 +12,8 @@ namespace codegen{
 
     std::vector<std::string> RequestHandlersParser::ParseRequestHandlers(const std::vector<std::string>& paths) {
         std::vector<std::string> result;
+
+        // run throw all dirs
         for(const std::string& path : paths){
             std::vector<std::string> directory_handlers = ParseDirectory(path);
             for (auto& handler : directory_handlers){
@@ -32,6 +34,7 @@ namespace codegen{
         }
 
         std::vector<std::string> result;
+        // run throw all files in dir
         for(auto file : std::filesystem::directory_iterator(directory)){
             if (std::filesystem::is_regular_file(file)){
                 std::vector<std::string> file_handlers = ParseFile(file);
@@ -48,6 +51,7 @@ namespace codegen{
         file_helpers::FileReader file_reader(file_path);
         std::vector<std::string> file_parts = file_reader.GetFileTextParts(" ");
 
+        // find all classes which are derived from kBasicClassName
         std::vector<std::string> result;
         for (int i = 0; i < file_parts.size(); ++i){
             if (file_parts[i] == "class" &&

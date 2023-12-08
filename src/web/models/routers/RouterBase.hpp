@@ -11,11 +11,14 @@
 namespace web_layout{
     using RequestHandler = std::function<HttpResponse (const HttpRequest&)>;
 
+    // pair of matcher and function, which will handler request
     struct RequestHandlingPair{
         HandlerMatcher matcher;
         RequestHandler handler;
     };
 
+
+    // class for storing containers
     class Container{
     public:
         Container() = default;
@@ -40,6 +43,7 @@ namespace web_layout{
         std::vector<RequestHandlingPair> container_;
     };
 
+    // class which holds all RequestHandlingPairs
     class RouterBase {
     public:
         RouterBase(const Container& route_map) : route_map_(route_map) {}

@@ -3,6 +3,7 @@
 
 namespace web_layout{
 
+    // checks if regex of matcher is equal of request path and methods equal
     bool HandlerMatcher::Match(const HttpRequest& request) const{
         std::smatch regex_match;
         bool regex_match_success = false;
