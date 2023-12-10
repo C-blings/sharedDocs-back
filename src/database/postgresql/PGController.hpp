@@ -1,6 +1,5 @@
 #pragma once
 
-<<<<<<< HEAD
 #include <cassert>
 #include <exception>
 #include <pqxx/except.hxx>
@@ -15,15 +14,10 @@
 #include <logging/Logger.hpp>
 #include <database/postgresql/PGConnection.hpp>
 #include <database/DatabaseController.hpp>
-=======
-#include "PGConnection.hpp"
-#include "../DatabaseController.hpp"
->>>>>>> 2a1300154042054268781c11227867e0572b8b37
 
 namespace database::postgresql{
     using Store = std::variant<int, bool, std::string>;
 
-<<<<<<< HEAD
     struct VisitStore {
         std::vector<std::string> parameters;
         void operator()(const int& arg)         { parameters.emplace_back(std::to_string(arg)); }
@@ -67,13 +61,6 @@ namespace database::postgresql{
             }
 
             return result;
-=======
-    class PGController : public DatabaseController<PGConnection, Store>{
-    public:
-        std::vector<Store> HandleQuery(PGConnection& connection,
-                                       const std::string& query, const std::vector<Store>& parameters) override {
-            return {};
->>>>>>> 2a1300154042054268781c11227867e0572b8b37
         }
     };
 }

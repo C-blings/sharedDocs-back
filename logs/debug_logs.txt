@@ -318,3 +318,4 @@ en;q=0.9
 [ 2023-12-10 19:47:13 DEBUG ] 0
 [ 2023-12-10 19:47:13 DEBUG ] Petr
 [ 2023-12-10 19:47:13 DEBUG ] Petrovich
+[ 2023-12-10 19:55:53 DEBUG ] Server restart
