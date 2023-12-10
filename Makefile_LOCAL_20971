@@ -3,7 +3,6 @@ NAME = server
 
 SRC_FILES = $(shell find ./src -name '*.cpp' && find ./libs/file_helpers -name '*.cpp' && find ./libs/formats -name '*.cpp')
 CUSTOM_LIBS = $(shell find ./libs/bin -name '*.a')
-<<<<<<< HEAD
 INCLUDE_DIRS = -I ./src -I ./libs -I ./codegen
 BUILD_FOLDER = build
 DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib libpqxx-dev
@@ -20,14 +19,6 @@ CODEGEN_MAIN_FILE = codegen.cpp
 CODEGEN_FILES = $(shell find ./codegen -name '*.cpp')
 CODEGEN_FLAGS = $(INCLUDE_DIRS) -ljsoncpp
 CODEGEN_NAME = codegen_file
-=======
-TESTING_FLAGS = -lgtest -lcurl
-RUN_FLAGS = -lpqxx -lpq
-RUN_MAIN_FILE = main.cpp
-TEST_MAIN_FILE = tests.cpp
-BUILD_FOLDER = build
-DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib libpqxx-6.4
->>>>>>> 2a1300154042054268781c11227867e0572b8b37
 
 .PHONY: all
 all: codegen compile run
@@ -35,11 +26,7 @@ all: codegen compile run
 .PHONY: compile 
 compile: $(RUN_MAIN_FILE)
 	mkdir -p $(BUILD_FOLDER)
-<<<<<<< HEAD
 	$(COMPILER) -g $(RUN_MAIN_FILE) $(CUSTOM_LIBS) $(SRC_FILES) -o $(NAME) $(RUN_FLAGS)
-=======
-	$(COMPILER) -g $(RUN_MAIN_FILE) $(CUSTOM_LIBS) $(SRC_FILES) $(RUN_FLAGS) -o $(NAME)
->>>>>>> 2a1300154042054268781c11227867e0572b8b37
 	mv $(NAME) $(BUILD_FOLDER)
 
 .PHONY: run

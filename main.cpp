@@ -5,10 +5,24 @@
 #include <web/request_handlers/CORSContainers.hpp>
 #include <logging/Logger.hpp>
 
+<<<<<<< HEAD
 int main() {
+=======
+#include "src/web/request_handlers/BasicContainer.hpp"
+#include "src/web/request_handlers/CORSContainers.hpp"
+
+#include "src/database/Database.hpp"
+#include "src/database/postgresql/PGConnection.hpp"
+#include "src/database/postgresql/PGController.hpp"
+
+int main(){
+>>>>>>> 2a1300154042054268781c11227867e0572b8b37
     std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {
 web_layout::CORSContainer(),web_layout::BasicContainer(),
    };
+
+    database::Database<database::postgresql::PGConnection, database::postgresql::PGController, database::postgresql::Store> db("shareDocs");
+    db.HandleQuery({}, {});
 
     web_layout::Container full_container;
 
