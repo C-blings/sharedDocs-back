@@ -284,3 +284,53 @@ Accept-Language: ru,en;q=0.9
 en;q=0.9
 
 
+[ 2023-12-04 13:44:00 DEBUG ] Server restart
+[ 2023-12-04 15:29:14 DEBUG ] Server restart
+[ 2023-12-04 15:29:45 DEBUG ] Server restart
+[ 2023-12-04 15:32:36 DEBUG ] Server restart
+[ 2023-12-04 15:34:49 DEBUG ] Server restart
+[ 2023-12-04 15:37:49 DEBUG ] Server restart
+[ 2023-12-04 15:53:17 DEBUG ] Server restart
+[ 2023-12-04 15:55:00 DEBUG ] Server restart
+[ 2023-12-10 16:28:30 DEBUG ] Server restart
+[ 2023-12-10 16:29:54 DEBUG ] Server restart
+[ 2023-12-10 16:31:15 DEBUG ] Server restart
+[ 2023-12-10 16:44:59 DEBUG ] Server restart
+[ 2023-12-10 16:47:40 DEBUG ] Server restart
+[ 2023-12-10 17:21:45 DEBUG ] Server restart
+[ 2023-12-10 17:28:20 DEBUG ] Server restart
+[ 2023-12-10 17:33:52 DEBUG ] Server restart
+[ 2023-12-10 17:34:36 DEBUG ] Server restart
+[ 2023-12-10 17:36:42 DEBUG ] Server restart
+[ 2023-12-10 17:38:10 DEBUG ] Server restart
+[ 2023-12-10 17:46:55 DEBUG ] Server restart
+[ 2023-12-10 17:48:59 DEBUG ] Server restart
+[ 2023-12-10 17:55:38 DEBUG ] Server restart
+[ 2023-12-10 17:59:55 ERROR ] Database error: ERROR:  syntax error at or near ")"
+LINE 1: ...Name varchar(255),         FirstName varchar(255),         )
+                                                                      ^
+
+ Query: CREATE TABLE Persons (         ID int,         LastName varchar(255),         FirstName varchar(255),         )
+[ 2023-12-10 18:01:28 DEBUG ] Server restart
+[ 2023-12-10 18:01:59 ERROR ] Database error: ERROR:  syntax error at or near ")"
+LINE 1: ...ame varchar(255),         FirstName varchar(255),         );
+                                                                     ^
+
+ Query: CREATE TABLE Persons (         ID int,         LastName varchar(255),         FirstName varchar(255),         );
+[ 2023-12-10 18:02:34 DEBUG ] Server restart
+[ 2023-12-10 18:29:03 DEBUG ] Server restart
+[ 2023-12-10 18:29:27 DEBUG ] Server restart
+[ 2023-12-10 19:04:21 DEBUG ] Server restart
+[ 2023-12-10 19:08:40 DEBUG ] Server restart
+[ 2023-12-10 19:12:18 DEBUG ] Server restart
+[ 2023-12-10 19:30:11 DEBUG ] Server restart
+[ 2023-12-10 19:30:41 ERROR ] Database error: ERROR:  relation "persons" already exists
+
+ Query: CREATE TABLE Persons (         ID int,         LastName varchar(255),         FirstName varchar(255)         );
+[ 2023-12-10 19:37:17 DEBUG ] Server restart
+[ 2023-12-10 19:37:46 ERROR ] Database error: ERROR:  relation "persons" already exists
+
+ Query: CREATE TABLE Persons (         ID int,         LastName varchar(255),         FirstName varchar(255)         );
+[ 2023-12-10 19:47:13 DEBUG ] 0
+[ 2023-12-10 19:47:13 DEBUG ] Petr
+[ 2023-12-10 19:47:13 DEBUG ] Petrovich

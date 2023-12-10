@@ -18,12 +18,12 @@ namespace database{
             }
         }
 
-        std::vector<Store> HandleQuery(const std::string& query, const std::vector<Store>& parameters){
+        std::vector<std::vector<Store>> HandleQuery(const std::string& query, const std::vector<Store>& parameters) {
             mutex_.lock();
             Connection connection = connections_.front();
             connections_.pop();
 
-            std::vector<Store> result = controller_.HandleQuery(connection, query, parameters);
+            std::vector<std::vector<Store>> result = controller_.HandleQuery(connection, query, parameters);
 
             connections_.push(connection);
             mutex_.unlock();
@@ -31,8 +31,17 @@ namespace database{
             return result;
         }
 
+        ~Database() {
+            while(!connections_.empty()) {
+                Connection& connection = connections_.front();
+                connections_.pop();
+
+                connection.disconnect();
+            }
+        }
+
     private:
-        const int MAX_CONNECTIONS = 10;
+        static const int MAX_CONNECTIONS = 10;
         std::queue<Connection> connections_;
         std::mutex mutex_;
         Controller controller_;

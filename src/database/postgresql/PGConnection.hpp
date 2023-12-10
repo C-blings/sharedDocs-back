@@ -24,7 +24,7 @@ namespace database::postgresql{
 
     private:
         const std::string db_host_ = "localhost";
-        const std::string db_user_ = "root";
+        const std::string db_user_ = "postgres";
         const std::string db_password_ = "1234";
     };
 }

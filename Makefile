@@ -5,14 +5,14 @@ SRC_FILES = $(shell find ./src -name '*.cpp' && find ./libs/file_helpers -name '
 CUSTOM_LIBS = $(shell find ./libs/bin -name '*.a')
 INCLUDE_DIRS = -I ./src -I ./libs -I ./codegen
 BUILD_FOLDER = build
-DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib
+DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib libpqxx-dev
 
 TESTS_NAME = run_tests
 TESTS_FILES = $(shell find ./tests -name '*.cpp')
-TESTING_FLAGS = $(INCLUDE_DIRS) -lgtest -lcurl -ljsoncpp
+TESTING_FLAGS = $(INCLUDE_DIRS) -lgtest -lcurl -ljsoncpp -lpqxx -lpq
 TEST_MAIN_FILE = tests.cpp
 
-RUN_FLAGS = $(INCLUDE_DIRS) -ljsoncpp
+RUN_FLAGS = $(INCLUDE_DIRS) -ljsoncpp -lpqxx -lpq
 RUN_MAIN_FILE = main.cpp
 
 CODEGEN_MAIN_FILE = codegen.cpp

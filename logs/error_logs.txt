@@ -1,0 +1,16 @@
+[ 2023-12-10 17:59:55 ERROR ] Database error: ERROR:  syntax error at or near ")"
+LINE 1: ...Name varchar(255),         FirstName varchar(255),         )
+                                                                      ^
+
+ Query: CREATE TABLE Persons (         ID int,         LastName varchar(255),         FirstName varchar(255),         )
+[ 2023-12-10 18:01:59 ERROR ] Database error: ERROR:  syntax error at or near ")"
+LINE 1: ...ame varchar(255),         FirstName varchar(255),         );
+                                                                     ^
+
+ Query: CREATE TABLE Persons (         ID int,         LastName varchar(255),         FirstName varchar(255),         );
+[ 2023-12-10 19:30:41 ERROR ] Database error: ERROR:  relation "persons" already exists
+
+ Query: CREATE TABLE Persons (         ID int,         LastName varchar(255),         FirstName varchar(255)         );
+[ 2023-12-10 19:37:46 ERROR ] Database error: ERROR:  relation "persons" already exists
+
+ Query: CREATE TABLE Persons (         ID int,         LastName varchar(255),         FirstName varchar(255)         );
