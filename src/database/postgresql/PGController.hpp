@@ -18,12 +18,24 @@
 namespace database::postgresql{
     using Store = std::variant<int, bool, std::string>;
 
-    struct VisitStore {
-        std::vector<std::string> parameters;
-        void operator()(const int& arg)         { parameters.emplace_back(std::to_string(arg)); }
-        void operator()(const bool& arg)        { parameters.emplace_back(arg ? "true" : "false"); }
-        void operator()(const std::string& arg) { parameters.emplace_back(arg); }
+    class GetVariantValue{
+    public:
+        static std::string GetValue(Store variant){
+            std::visit(VisitStore{}, variant);
+            return value_;
+        }
+
+    private:
+        struct VisitStore {
+            void operator()(int arg) { value_ = std::move(std::to_string(arg)); }
+            void operator()(bool arg) { value_ = (arg ? "true" : "false"); }
+            void operator()(const std::string& arg) { value_= std::move(arg); }
+        };
+
+    private:
+        static std::string value_;
     };
+
 
     class PGController : public DatabaseController<PGConnection, Store>{
     public:
@@ -34,14 +46,13 @@ namespace database::postgresql{
             try {
                 pqxx::work worker{*connection.GetConnection()};
 
-                VisitStore visitor;
+                std::vector<std::string> parameters;
 
                 for(const auto& raw_parameter: raw_parameters) {
-                    std::visit( visitor, raw_parameter);
+                    std::string value = GetVariantValue::GetValue(raw_parameter);
+                    parameters.emplace_back(value);
                 }
 
-                std::vector<std::string> parameters = visitor.parameters; 
-            
                 pqxx::result raw_result = worker.exec_params(query, pqxx::prepare::make_dynamic_params(parameters));
 
                 for(const auto &row: raw_result) {
