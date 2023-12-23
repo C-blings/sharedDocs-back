@@ -7,7 +7,7 @@
 
 int main() {
     std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {
-web_layout::CORSContainer(),web_layout::BasicContainer(),
+web_layout::BasicContainer(),web_layout::CORSContainer(),
    };
 
     web_layout::Container full_container;

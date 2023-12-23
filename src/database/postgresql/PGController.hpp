@@ -1,10 +1,8 @@
 #pragma once
 
-#include <cassert>
 #include <exception>
-#include <pqxx/except.hxx>
-#include <pqxx/prepared_statement.hxx>
-#include <pqxx/transaction.hxx>
+#include <pqxx/prepared_statement>
+#include <pqxx/transaction>
 #include <sstream>
 #include <string>
 #include <type_traits>
@@ -19,6 +17,9 @@ namespace database::postgresql{
     using Store = std::variant<int, bool, std::string>;
 
     class GetVariantValue{
+    private:
+        static std::string value_;
+
     public:
         static std::string GetValue(Store variant){
             std::visit(VisitStore{}, variant);
@@ -27,14 +28,13 @@ namespace database::postgresql{
 
     private:
         struct VisitStore {
-            void operator()(int arg) { value_ = std::move(std::to_string(arg)); }
+            void operator()(int arg) { value_ = std::to_string(arg); }
             void operator()(bool arg) { value_ = (arg ? "true" : "false"); }
-            void operator()(const std::string& arg) { value_= std::move(arg); }
+            void operator()(const std::string& arg) { value_ = arg; }
         };
-
-    private:
-        static std::string value_;
     };
+
+    std::string GetVariantValue::value_ = "";
 
 
     class PGController : public DatabaseController<PGConnection, Store>{

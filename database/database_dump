@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: deadlines; Type: TABLE; Schema: public; Owner: root
+-- Name: deadlines; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.deadlines (
@@ -33,10 +33,10 @@ CREATE TABLE public.deadlines (
 );
 
 
-ALTER TABLE public.deadlines OWNER TO root;
+ALTER TABLE public.deadlines OWNER TO postgres;
 
 --
--- Name: deadlines_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: deadlines_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.deadlines_id_seq
@@ -47,17 +47,17 @@ CREATE SEQUENCE public.deadlines_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.deadlines_id_seq OWNER TO root;
+ALTER TABLE public.deadlines_id_seq OWNER TO postgres;
 
 --
--- Name: deadlines_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+-- Name: deadlines_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.deadlines_id_seq OWNED BY public.deadlines.id;
 
 
 --
--- Name: files; Type: TABLE; Schema: public; Owner: root
+-- Name: files; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.files (
@@ -67,10 +67,10 @@ CREATE TABLE public.files (
 );
 
 
-ALTER TABLE public.files OWNER TO root;
+ALTER TABLE public.files OWNER TO postgres;
 
 --
--- Name: files_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: files_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.files_id_seq
@@ -81,17 +81,17 @@ CREATE SEQUENCE public.files_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.files_id_seq OWNER TO root;
+ALTER TABLE public.files_id_seq OWNER TO postgres;
 
 --
--- Name: files_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+-- Name: files_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.files_id_seq OWNED BY public.files.id;
 
 
 --
--- Name: folders; Type: TABLE; Schema: public; Owner: root
+-- Name: folders; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.folders (
@@ -101,10 +101,10 @@ CREATE TABLE public.folders (
 );
 
 
-ALTER TABLE public.folders OWNER TO root;
+ALTER TABLE public.folders OWNER TO postgres;
 
 --
--- Name: folders_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: folders_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.folders_id_seq
@@ -115,17 +115,17 @@ CREATE SEQUENCE public.folders_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.folders_id_seq OWNER TO root;
+ALTER TABLE public.folders_id_seq OWNER TO postgres;
 
 --
--- Name: folders_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+-- Name: folders_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.folders_id_seq OWNED BY public.folders.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: root
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.users (
@@ -137,10 +137,10 @@ CREATE TABLE public.users (
 );
 
 
-ALTER TABLE public.users OWNER TO root;
+ALTER TABLE public.users OWNER TO postgres;
 
 --
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.users_id_seq
@@ -151,17 +151,17 @@ CREATE SEQUENCE public.users_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.users_id_seq OWNER TO root;
+ALTER TABLE public.users_id_seq OWNER TO postgres;
 
 --
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- Name: workspaces; Type: TABLE; Schema: public; Owner: root
+-- Name: workspaces; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.workspaces (
@@ -170,10 +170,10 @@ CREATE TABLE public.workspaces (
 );
 
 
-ALTER TABLE public.workspaces OWNER TO root;
+ALTER TABLE public.workspaces OWNER TO postgres;
 
 --
--- Name: workspaces_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+-- Name: workspaces_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.workspaces_id_seq
@@ -184,52 +184,52 @@ CREATE SEQUENCE public.workspaces_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.workspaces_id_seq OWNER TO root;
+ALTER TABLE public.workspaces_id_seq OWNER TO postgres;
 
 --
--- Name: workspaces_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+-- Name: workspaces_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.workspaces_id_seq OWNED BY public.workspaces.id;
 
 
 --
--- Name: deadlines id; Type: DEFAULT; Schema: public; Owner: root
+-- Name: deadlines id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.deadlines ALTER COLUMN id SET DEFAULT nextval('public.deadlines_id_seq'::regclass);
 
 
 --
--- Name: files id; Type: DEFAULT; Schema: public; Owner: root
+-- Name: files id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.files ALTER COLUMN id SET DEFAULT nextval('public.files_id_seq'::regclass);
 
 
 --
--- Name: folders id; Type: DEFAULT; Schema: public; Owner: root
+-- Name: folders id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.folders ALTER COLUMN id SET DEFAULT nextval('public.folders_id_seq'::regclass);
 
 
 --
--- Name: users id; Type: DEFAULT; Schema: public; Owner: root
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
--- Name: workspaces id; Type: DEFAULT; Schema: public; Owner: root
+-- Name: workspaces id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.workspaces ALTER COLUMN id SET DEFAULT nextval('public.workspaces_id_seq'::regclass);
 
 
 --
--- Data for Name: deadlines; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: deadlines; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.deadlines (id, workspace_id, date, title, description) FROM stdin;
@@ -237,7 +237,7 @@ COPY public.deadlines (id, workspace_id, date, title, description) FROM stdin;
 
 
 --
--- Data for Name: files; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: files; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.files (id, deadline_id, file_path) FROM stdin;
@@ -245,7 +245,7 @@ COPY public.files (id, deadline_id, file_path) FROM stdin;
 
 
 --
--- Data for Name: folders; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: folders; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.folders (id, user_id, workspaces_ids) FROM stdin;
@@ -253,7 +253,7 @@ COPY public.folders (id, user_id, workspaces_ids) FROM stdin;
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.users (id, nickname, email, password) FROM stdin;
@@ -261,7 +261,7 @@ COPY public.users (id, nickname, email, password) FROM stdin;
 
 
 --
--- Data for Name: workspaces; Type: TABLE DATA; Schema: public; Owner: root
+-- Data for Name: workspaces; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.workspaces (id, user_id) FROM stdin;
@@ -269,42 +269,42 @@ COPY public.workspaces (id, user_id) FROM stdin;
 
 
 --
--- Name: deadlines_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: deadlines_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.deadlines_id_seq', 1, false);
 
 
 --
--- Name: files_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: files_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.files_id_seq', 1, false);
 
 
 --
--- Name: folders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: folders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.folders_id_seq', 1, false);
 
 
 --
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.users_id_seq', 1, false);
 
 
 --
--- Name: workspaces_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+-- Name: workspaces_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.workspaces_id_seq', 1, false);
 
 
 --
--- Name: deadlines deadlines_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+-- Name: deadlines deadlines_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.deadlines
@@ -312,7 +312,7 @@ ALTER TABLE ONLY public.deadlines
 
 
 --
--- Name: files files_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+-- Name: files files_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.files
@@ -320,7 +320,7 @@ ALTER TABLE ONLY public.files
 
 
 --
--- Name: folders folders_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+-- Name: folders folders_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.folders
@@ -328,7 +328,7 @@ ALTER TABLE ONLY public.folders
 
 
 --
--- Name: users users_email_key; Type: CONSTRAINT; Schema: public; Owner: root
+-- Name: users users_email_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
@@ -336,7 +336,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: users users_nickname_key; Type: CONSTRAINT; Schema: public; Owner: root
+-- Name: users users_nickname_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
@@ -344,7 +344,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
@@ -352,7 +352,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: workspaces workspaces_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+-- Name: workspaces workspaces_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.workspaces
@@ -360,7 +360,7 @@ ALTER TABLE ONLY public.workspaces
 
 
 --
--- Name: files relation_to_dealine; Type: FK CONSTRAINT; Schema: public; Owner: root
+-- Name: files relation_to_dealine; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.files
@@ -368,7 +368,7 @@ ALTER TABLE ONLY public.files
 
 
 --
--- Name: workspaces relation_to_user; Type: FK CONSTRAINT; Schema: public; Owner: root
+-- Name: workspaces relation_to_user; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.workspaces
@@ -376,7 +376,7 @@ ALTER TABLE ONLY public.workspaces
 
 
 --
--- Name: folders relation_to_user; Type: FK CONSTRAINT; Schema: public; Owner: root
+-- Name: folders relation_to_user; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.folders
@@ -384,7 +384,7 @@ ALTER TABLE ONLY public.folders
 
 
 --
--- Name: deadlines relation_to_workspace; Type: FK CONSTRAINT; Schema: public; Owner: root
+-- Name: deadlines relation_to_workspace; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.deadlines
