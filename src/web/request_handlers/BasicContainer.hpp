@@ -16,10 +16,11 @@ namespace web_layout{
     private:
         static HttpResponse RootHandler (const HttpRequest& request) {
             std::unordered_map<std::string, std::string> headers = {
-                    {"Access-Control-Allow-Origin", "*"}
+                    {"Access-Control-Allow-Origin", "*"},
+                    {"Content-Type", "application/json"}
             };
 
-            return HttpResponse(200, "OK", headers, "{\"message\": \"hello from Sliderer\"}");
+            return HttpResponse(200, "OK", headers, "{message: \"hello from Sliderer\"}");
         }
     };
 }
