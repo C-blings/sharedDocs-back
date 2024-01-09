@@ -19,7 +19,7 @@ namespace web_layout{
                     {"Access-Control-Allow-Origin", "*"}
             };
 
-            return HttpResponse(200, "OK", headers, "hello from Sliderer");
+            return HttpResponse(200, "OK", headers, "{\"message\": \"hello from Sliderer\"}");
         }
     };
 }

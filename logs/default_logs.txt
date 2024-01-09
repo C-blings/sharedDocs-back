@@ -919,3 +919,95 @@ Accept-Encoding: gzip, deflate, br
 Accept-Language: ru,en;q=0.9
 
 
+[ 2024-01-09 16:19:35 DEBUG ] Server restart
+[ 2024-01-09 16:19:40 DEBUG ] GET / HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-09 16:28:08 DEBUG ] Server restart
+[ 2024-01-09 16:28:16 DEBUG ] GET / HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-09 16:28:51 DEBUG ] Server restart
+[ 2024-01-09 16:29:30 DEBUG ] Server restart
+[ 2024-01-09 16:29:49 DEBUG ] GET / HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-09 16:30:26 DEBUG ] Server restart
+[ 2024-01-09 16:30:45 DEBUG ] Server restart
+[ 2024-01-09 16:31:06 DEBUG ] Server restart
+[ 2024-01-09 16:31:13 DEBUG ] GET / HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-09 16:31:14 DEBUG ] GET / HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
