@@ -15,7 +15,11 @@ namespace web_layout{
 
     private:
         static HttpResponse RootHandler (const HttpRequest& request) {
-            return HttpResponse(200, "OK", {{"Cache-Control", "no-cache, private"}, {"Content-Type", "text/html"}}, "hello from Sliderer");
+            std::unordered_map<std::string, std::string> headers = {
+                    {"Access-Control-Allow-Origin", "*"}
+            };
+
+            return HttpResponse(200, "OK", headers, "hello from Sliderer");
         }
     };
 }

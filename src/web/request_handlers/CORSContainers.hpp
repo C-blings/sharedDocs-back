@@ -17,11 +17,9 @@ namespace web_layout{
         // request handler
         static HttpResponse CORSHandler(const HttpRequest& request) {
             std::unordered_map<std::string, std::string> headers = {
-                    {"Cache-Control", "max-age=604800, must-revalidate"},
-                    {"Age:", "100"},
-                    {"Access-Control-Allow-Origin", "*"},
-                    {"Access-Control-Allow-Methods", "POST, GET, OPTIONS"},
-                    {"Access-Control-Allow-Headers", "Content-Type"}
+                    {"Access-Control-Allow-Methods", "GET, POST, OPTIONS"},
+                    {"Access-Control-Allow-Headers", "Content-Type"},
+                    {"Access-Control-Allow-Origin", "*"}
             };
             return HttpResponse(200, "OK", headers, "CORS");
         }
