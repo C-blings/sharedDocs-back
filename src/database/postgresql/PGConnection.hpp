@@ -1,7 +1,6 @@
 #pragma once
 #define FMT_HEADER_ONLY
 
-#include <pqxx/pqxx>
 #include <fmt/format.h>
 
 #include "../DatabaseConnection.hpp"
@@ -17,6 +16,10 @@ namespace database::postgresql{
         std::shared_ptr<pqxx::connection> GetConnection() const override{
             return connection_;
         };
+
+        ~PGConnection(){
+            connection_->close();
+        }
     private:
         std::string FormatConnectionString(const std::string& db_name){
             return fmt::format("host={} user={} password={} dbname={}", db_host_, db_user_, db_password_, db_name);

@@ -12,37 +12,27 @@ namespace database{
     template<typename Connection, typename Controller, typename Store>
     class Database{
     public:
-        Database(const std::string& db_name_){
-            for(int i = 0; i < MAX_CONNECTIONS; ++i){
-                connections_.push(Connection(db_name_));
+        explicit Database(const std::string& db_name_){
+            for(int i = 0; i < kMaxConnections; ++i){
+                connections_.push_back(std::make_unique<Connection>(db_name_));
             }
+            connection_index_ = 0;
         }
 
         std::vector<std::vector<Store>> HandleQuery(const std::string& query, const std::vector<Store>& parameters) {
             mutex_.lock();
-            Connection connection = connections_.front();
-            connections_.pop();
+            Connection connection = *connections_[connection_index_];
 
             std::vector<std::vector<Store>> result = controller_.HandleQuery(connection, query, parameters);
-
-            connections_.push(connection);
+            connection_index_ = (connection_index_ + 1) % kMaxConnections;
             mutex_.unlock();
-
             return result;
         }
 
-        ~Database() {
-            while(!connections_.empty()) {
-                Connection& connection = connections_.front();
-                connections_.pop();
-
-                connection.disconnect();
-            }
-        }
-
     private:
-        static const int MAX_CONNECTIONS = 10;
-        std::queue<Connection> connections_;
+        static const int kMaxConnections = 10;
+        std::vector<std::unique_ptr<Connection>> connections_;
+        int connection_index_;
         std::mutex mutex_;
         Controller controller_;
     };

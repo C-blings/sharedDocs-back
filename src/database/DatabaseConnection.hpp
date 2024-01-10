@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <pqxx/connection>
 
 namespace database{
     template<typename T>

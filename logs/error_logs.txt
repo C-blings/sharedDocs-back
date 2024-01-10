@@ -20,3 +20,80 @@ LINE 1: ...ame varchar(255),         FirstName varchar(255),         );
 [ 2023-12-23 14:13:47 ERROR ] Database error: ОШИБКА:  отношение "test" уже существует
 
  Query: CREATE TABLE test (         ID int,         LastName varchar(255),         FirstName varchar(255)         );
+[ 2024-01-10 15:02:36 ERROR ] ОШИБКА:  в сообщении Bind передано неверное число параметров (1, а подготовленный оператор "" требует 0)
+
+[ 2024-01-10 15:02:37 ERROR ] Database error: ОШИБКА:  отношение "test" не существует
+LINE 1: INSERT INTO test(ID, LastName, FirstName) VALUES($1, $2, $3)
+                    ^
+
+ Query: INSERT INTO test(ID, LastName, FirstName) VALUES($1, $2, $3)
+[ 2024-01-10 15:02:37 ERROR ] Database error: ОШИБКА:  отношение "test" не существует
+LINE 1: SELECT * FROM test
+                      ^
+
+ Query: SELECT * FROM test
+[ 2024-01-10 15:02:38 ERROR ] ОШИБКА:  в сообщении Bind передано неверное число параметров (1, а подготовленный оператор "" требует 0)
+
+[ 2024-01-10 15:09:48 ERROR ] ОШИБКА:  в сообщении Bind передано неверное число параметров (1, а подготовленный оператор "" требует 0)
+
+[ 2024-01-10 15:09:49 ERROR ] Database error: ОШИБКА:  отношение "test" не существует
+LINE 1: INSERT INTO test(ID, LastName, FirstName) VALUES($1, $2, $3)
+                    ^
+
+ Query: INSERT INTO test(ID, LastName, FirstName) VALUES($1, $2, $3)
+[ 2024-01-10 15:09:50 ERROR ] Database error: ОШИБКА:  отношение "test" не существует
+LINE 1: SELECT * FROM test
+                      ^
+
+ Query: SELECT * FROM test
+[ 2024-01-10 15:09:50 ERROR ] ОШИБКА:  в сообщении Bind передано неверное число параметров (1, а подготовленный оператор "" требует 0)
+
+[ 2024-01-10 15:14:13 ERROR ] ОШИБКА:  в сообщении Bind передано неверное число параметров (1, а подготовленный оператор "" требует 0)
+
+[ 2024-01-10 15:14:14 ERROR ] Database error: ОШИБКА:  отношение "test" не существует
+LINE 1: INSERT INTO test(ID, LastName, FirstName) VALUES($1, $2, $3)
+                    ^
+
+ Query: INSERT INTO test(ID, LastName, FirstName) VALUES($1, $2, $3)
+[ 2024-01-10 15:14:14 ERROR ] Database error: ОШИБКА:  отношение "test" не существует
+LINE 1: SELECT * FROM test
+                      ^
+
+ Query: SELECT * FROM test
+[ 2024-01-10 15:14:15 ERROR ] ОШИБКА:  в сообщении Bind передано неверное число параметров (1, а подготовленный оператор "" требует 0)
+
+[ 2024-01-10 15:31:54 ERROR ] ОШИБКА:  в сообщении Bind передано неверное число параметров (1, а подготовленный оператор "" требует 0)
+
+[ 2024-01-10 15:31:55 ERROR ] Database error: ОШИБКА:  отношение "test" не существует
+LINE 1: INSERT INTO test(ID, LastName, FirstName) VALUES($1, $2, $3)
+                    ^
+
+ Query: INSERT INTO test(ID, LastName, FirstName) VALUES($1, $2, $3)
+[ 2024-01-10 15:31:56 ERROR ] Database error: ОШИБКА:  отношение "test" не существует
+LINE 1: SELECT * FROM test
+                      ^
+
+ Query: SELECT * FROM test
+[ 2024-01-10 15:31:56 ERROR ] ОШИБКА:  в сообщении Bind передано неверное число параметров (1, а подготовленный оператор "" требует 0)
+
+[ 2024-01-10 15:33:45 ERROR ] ОШИБКА:  в сообщении Bind передано неверное число параметров (1, а подготовленный оператор "" требует 0)
+
+[ 2024-01-10 15:41:52 ERROR ] ОШИБКА:  в сообщении Bind передано неверное число параметров (1, а подготовленный оператор "" требует 3)
+
+[ 2024-01-10 18:03:58 ERROR ] Lost connection to the database server.
+[ 2024-01-10 18:06:24 ERROR ] Lost connection to the database server.
+[ 2024-01-10 18:10:12 ERROR ] Database error: ОШИБКА:  ошибка синтаксиса в конце
+LINE 1: INSERT INTO users (nickname, email, password)
+                                                     ^
+
+ Query: INSERT INTO users (nickname, email, password)
+[ 2024-01-10 18:13:08 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(nickname)=(sliderer)" уже существует.
+
+ Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)
+[ 2024-01-10 18:14:15 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_email_key"
+DETAIL:  Ключ "(email)=(a6271547@mail.ru)" уже существует.
+
+ Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)
+[ 2024-01-10 18:34:32 ERROR ] Lost connection to the database server.
+[ 2024-01-10 18:44:42 ERROR ] Lost connection to the database server.

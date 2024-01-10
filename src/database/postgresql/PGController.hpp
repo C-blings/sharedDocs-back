@@ -1,13 +1,14 @@
 #pragma once
 
 #include <exception>
-#include <pqxx/prepared_statement>
-#include <pqxx/transaction>
 #include <sstream>
 #include <string>
 #include <type_traits>
 #include <variant>
 #include <vector>
+
+#include <pqxx/transaction>
+#include <pqxx/result>
 
 #include <logging/Logger.hpp>
 #include <database/postgresql/PGConnection.hpp>
@@ -34,8 +35,6 @@ namespace database::postgresql{
         };
     };
 
-    std::string GetVariantValue::value_ = "";
-
 
     class PGController : public DatabaseController<PGConnection, Store>{
     public:
@@ -46,16 +45,16 @@ namespace database::postgresql{
             try {
                 pqxx::work worker{*connection.GetConnection()};
 
-                std::vector<std::string> parameters;
+                pqxx::params parameters;
 
                 for(const auto& raw_parameter: raw_parameters) {
                     std::string value = GetVariantValue::GetValue(raw_parameter);
-                    parameters.emplace_back(value);
+                    parameters.append(value);
                 }
 
-                pqxx::result raw_result = worker.exec_params(query, pqxx::prepare::make_dynamic_params(parameters));
+                pqxx::result raw_result = worker.exec_params(query, parameters);
 
-                for(const auto &row: raw_result) {
+                for(const auto& row : raw_result) {
                     result.emplace_back();
                     for(const auto &field: row) {
                         result.back().emplace_back(field.c_str());
