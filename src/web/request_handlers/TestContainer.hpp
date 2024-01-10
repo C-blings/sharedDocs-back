@@ -4,9 +4,9 @@
 
 namespace web_layout{
 
-    class BasicContainer : public RequestHandlersContainerBase {
+    class TestContainer : public RequestHandlersContainerBase {
     public:
-        BasicContainer(){
+        TestContainer(){
             Container container;
             container.AddValue({HandlerMatcher(Method::GET, std::regex("/")), RootHandler});
 
@@ -20,7 +20,7 @@ namespace web_layout{
                     {"Content-Type", "application/json"}
             };
 
-            return HttpResponse(200, "OK", headers, "{message: \"hello from Sliderer\"}");
+            return HttpResponse(200, "OK", headers, "{\"message\": \"hello from Sliderer\"}");
         }
     };
 }

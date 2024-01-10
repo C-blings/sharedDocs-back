@@ -43,7 +43,8 @@ namespace web_layout{
             // handle user
             size_t request_size = recv(listener_, request_buffer, MAX_REQUEST_SIZE, 0);
             HttpRequest request = HttpRequestParser::GetHttpRequest(request_buffer);
-            Logger(Debug).Print(request_buffer);
+
+            Logger(Debug).Print("BODY: ", request.GetBody(), " ");
             std::string response = handler->HandleRequest(request).AsString();
 
             if(send(listener_, response.c_str(), response.size(), 0) < 0){

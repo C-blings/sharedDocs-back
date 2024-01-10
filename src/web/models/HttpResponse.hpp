@@ -13,7 +13,7 @@ namespace web_layout{
 
         explicit HttpResponse(int status_code, const std::string& result_test,
                               const std::unordered_map<std::string, std::string>& headers,
-                              const std::optional<std::string>& body) :
+                              const std::optional<std::string>& body = std::nullopt) :
                               status_code_(status_code), result_text_(result_test),
                               headers_(headers), body_(body) {}
 

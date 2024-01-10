@@ -26,7 +26,7 @@ all: codegen compile run
 .PHONY: compile 
 compile: $(RUN_MAIN_FILE)
 	mkdir -p $(BUILD_FOLDER)
-	$(COMPILER) -g $(RUN_MAIN_FILE) $(CUSTOM_LIBS) $(SRC_FILES) -o $(NAME) $(RUN_FLAGS)
+	$(COMPILER) -g $(RUN_MAIN_FILE) $(SRC_FILES) $(CUSTOM_LIBS) -o $(NAME) $(RUN_FLAGS)
 	mv $(NAME) $(BUILD_FOLDER)
 
 .PHONY: run

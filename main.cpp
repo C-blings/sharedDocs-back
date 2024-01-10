@@ -1,13 +1,14 @@
 #include <web/helpers/HandlerMatcher.hpp>
 #include <web/request_handlers/RequestHandlersContainerBase.hpp>
 #include <web/tcp_server/TCPServer.hpp>
-#include <web/request_handlers/BasicContainer.hpp>
+#include <web/request_handlers/TestContainer.hpp>
+#include <web/request_handlers/RegistrationContainers.hpp>
 #include <web/request_handlers/CORSContainers.hpp>
 #include <logging/Logger.hpp>
 
 int main() {
     std::vector<web_layout::RequestHandlersContainerBase> requests_containers = {
-web_layout::BasicContainer(),web_layout::CORSContainer(),
+web_layout::CORSContainer(),web_layout::RegistrationContainers(),web_layout::TestContainer(),
    };
 
     web_layout::Container full_container;

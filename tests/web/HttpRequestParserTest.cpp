@@ -5,8 +5,8 @@
 
 TEST(ParserTest, CheckParserResult) {
     const std::string request = 
-        "GET /id/2 HTTP/1.1\n \
-        Host: developer.mozilla.org\n \
+        "GET /id/2 HTTP/1.1\n\r \
+        Host: developer.mozilla.org\n\r \
         Accept-Language: fr";
     
     std::unordered_map<std::string,std::string> headers;
@@ -23,9 +23,9 @@ TEST(ParserTest, CheckParserResult) {
 
 TEST(ParserTestWithBody, CheckParserResult) {
     const std::string request = 
-        "POST /cgi-bin HTTP/1.1\n\
-        Host: www.tutorialspoint.com\n\
-        \n\
+        "POST /cgi-bin HTTP/1.1\n\r \
+        Host: www.tutorialspoint.com\n\r \
+        \n\r \
         licenseID=string&content=string&/paramsXML=string";
 
     std::unordered_map<std::string,std::string> headers;
@@ -41,8 +41,8 @@ TEST(ParserTestWithBody, CheckParserResult) {
 
 TEST(ParserTestWithoutHeaders, CheckParserResult) {
     const std::string request = 
-        "PUT /main HTTP/1.1\n\
-        \n\
+        "PUT /main HTTP/1.1\n\r \
+        \n\r \
         licenseID=string&content=string&/paramsXML=string";
 
     std::unordered_map<std::string,std::string> headers;

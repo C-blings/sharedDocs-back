@@ -28,7 +28,7 @@ namespace web_layout{
             static HttpRequest GetHttpRequest(const std::string& request) {
                 std::vector<std::string> request_lines;
                 boost::split(request_lines, request, boost::is_any_of("\n\r"), boost::token_compress_off);
-				
+
 				std::vector<std::string> method_and_path;
 				boost::split(method_and_path, request_lines[0], boost::is_any_of(" "), boost::token_compress_on);
 
@@ -38,12 +38,12 @@ namespace web_layout{
 				std::string body;
 
 				int i;
-				for(i = 1; i < request_lines.size(); ++i) {
+				for(i = 2; i < request_lines.size(); i += 2) {
                     boost::trim(request_lines[i]);
 
 					if(request_lines[i].empty()) {
-							++i;
-                            break;
+                        i += 2;
+                        break;
 					}
 
 					std::vector<std::string> header;

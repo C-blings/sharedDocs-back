@@ -76,7 +76,8 @@ namespace codegen{
             stream << "#include <web/helpers/HandlerMatcher.hpp>\n" <<
             "#include <web/request_handlers/RequestHandlersContainerBase.hpp>\n" <<
             "#include <web/tcp_server/TCPServer.hpp>\n" <<
-            "#include <web/request_handlers/BasicContainer.hpp>\n" <<
+            "#include <web/request_handlers/TestContainer.hpp>\n" <<
+            "#include <web/request_handlers/RegistrationContainers.hpp>\n" <<
             "#include <web/request_handlers/CORSContainers.hpp>\n" <<
             "#include <logging/Logger.hpp>\n\n";
         }
