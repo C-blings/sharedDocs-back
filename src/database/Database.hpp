@@ -7,6 +7,8 @@
 #include <string>
 
 #include "DatabaseController.hpp"
+#include <database/DatabaseConnection.hpp>
+#include <database/DatabaseController.hpp>
 
 namespace database{
     template<typename Connection, typename Controller, typename Store>

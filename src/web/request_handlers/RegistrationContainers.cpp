@@ -6,6 +6,10 @@ namespace web_layout{
             RegistrationContainers::database_ = database::DatabaseFabric::GetDatabase();
 
     HttpResponse RegistrationContainers::AddUser(const HttpRequest& request){
+        std::unordered_map<std::string, std::string> headers = {
+                {"Access-Control-Allow-Origin", "*"}
+        };
+
         std::string body = request.GetBody();
         formats::json::JsonValue json(body);
 
@@ -15,11 +19,11 @@ namespace web_layout{
                 json.GetValue<std::string>("password")
         };
 
-        database_->HandleQuery("INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)", parameters);
-
-        std::unordered_map<std::string, std::string> headers = {
-                {"Access-Control-Allow-Origin", "*"}
-        };
+        try{
+            database_->HandleQuery("INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)", parameters);
+        }catch (std::exception& e){
+            return HttpResponse(400, "Error", headers);
+        }
 
         return HttpResponse(200, "OK", headers);
     }
