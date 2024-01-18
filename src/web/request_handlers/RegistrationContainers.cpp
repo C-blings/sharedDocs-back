@@ -14,7 +14,7 @@ namespace web_layout{
         formats::json::JsonValue json(body);
 
         std::vector<database::postgresql::Store> parameters = {
-                json.GetValue<std::string>("nickname"),
+                json.GetValue<std::string>("login"),
                 json.GetValue<std::string>("email"),
                 json.GetValue<std::string>("password")
         };

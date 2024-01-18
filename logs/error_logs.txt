@@ -97,3 +97,15 @@ DETAIL:  Ключ "(email)=(a6271547@mail.ru)" уже существует.
  Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)
 [ 2024-01-10 18:34:32 ERROR ] Lost connection to the database server.
 [ 2024-01-10 18:44:42 ERROR ] Lost connection to the database server.
+[ 2024-01-14 00:43:41 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(nickname)=()" уже существует.
+
+ Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)
+[ 2024-01-14 04:53:48 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(nickname)=()" уже существует.
+
+ Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)
+[ 2024-01-14 05:02:46 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(nickname)=(sliderer)" уже существует.
+
+ Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)

@@ -2151,3 +2151,43 @@ DETAIL:  Ключ "(email)=(a6271547@mail.ru)" уже существует.
 "email": "a6271547@mail.r4u",
 "password": "1231"
 }1� 
+[ 2024-01-14 00:40:46 DEBUG ] Server restart
+[ 2024-01-14 00:43:18 DEBUG ] BODY:  
+[ 2024-01-14 00:43:32 DEBUG ] BODY:  
+[ 2024-01-14 00:43:41 DEBUG ] BODY:  
+[ 2024-01-14 00:43:41 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(nickname)=()" уже существует.
+
+ Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)
+[ 2024-01-14 04:53:44 DEBUG ] Server restart
+[ 2024-01-14 04:53:48 DEBUG ] BODY:  
+[ 2024-01-14 04:53:48 DEBUG ] BODY: {"login":"asd","email":"qwd","password":"qwd"}��� 
+[ 2024-01-14 04:53:48 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(nickname)=()" уже существует.
+
+ Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)
+[ 2024-01-14 04:59:22 DEBUG ] Server restart
+[ 2024-01-14 05:00:20 DEBUG ] Server restart
+[ 2024-01-14 05:00:25 DEBUG ] BODY:  
+[ 2024-01-14 05:00:26 DEBUG ] BODY: {"login":"123","email":"123","password":"123"}��� 
+[ 2024-01-14 05:02:09 DEBUG ] Server restart
+[ 2024-01-14 05:02:32 DEBUG ] BODY:  
+[ 2024-01-14 05:02:32 DEBUG ] BODY: {"login":"sliderer","email":"a627147@mail.ru","password":"1324546576879"} 
+[ 2024-01-14 05:02:46 DEBUG ] BODY: Fetch-Dest: empty
+
+Referer: http://localhost:3000/
+
+Accept-Encoding: gzip, deflate, br
+
+Accept-Language: ru,en;q=0.9
+
+
+
+{"login":"sliderer","email":"a627147@mail.ru","password":"1324546576879"} 
+[ 2024-01-14 05:02:46 DEBUG ] BODY: {"login":"sliderer","email":"a627147@mail.ru","password":"1324546576879"} 
+[ 2024-01-14 05:02:46 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(nickname)=(sliderer)" уже существует.
+
+ Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)
+[ 2024-01-15 15:53:39 DEBUG ] Server restart
+[ 2024-01-15 15:55:37 DEBUG ] Server restart
