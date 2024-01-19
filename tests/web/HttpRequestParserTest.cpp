@@ -21,6 +21,39 @@ TEST(ParserTest, CheckParserResult) {
     EXPECT_EQ(result.GetBody(), "");
 }
 
+TEST(ParserTest, CheckSingleParameter) {
+    const std::string request =
+            "GET /id/2?user=userName HTTP/1.1\n\r \
+        Host: developer.mozilla.org\n\r \
+        Accept-Language: fr";
+
+    std::unordered_map<std::string,std::string> parameters;
+    parameters.emplace("user", "userName");
+
+    web_layout::HttpRequest result = web_layout::HttpRequestParser::GetHttpRequest(request);
+
+    EXPECT_EQ(result.GetMethod(), web_layout::Method::GET);
+    EXPECT_EQ(result.GetPath(), "/id/2");
+    EXPECT_EQ(result.GetParameters(), parameters);
+}
+
+TEST(ParserTest, CheckMultipleParameter) {
+    const std::string request =
+            "GET /id/2?user=userName;nickname=nickName HTTP/1.1\n\r \
+        Host: developer.mozilla.org\n\r \
+        Accept-Language: fr";
+
+    std::unordered_map<std::string,std::string> parameters;
+    parameters.emplace("user", "userName");
+    parameters.emplace("nickname", "nickName");
+
+    web_layout::HttpRequest result = web_layout::HttpRequestParser::GetHttpRequest(request);
+
+    EXPECT_EQ(result.GetMethod(), web_layout::Method::GET);
+    EXPECT_EQ(result.GetPath(), "/id/2");
+    EXPECT_EQ(result.GetParameters(), parameters);
+}
+
 TEST(ParserTestWithBody, CheckParserResult) {
     const std::string request = 
         "POST /cgi-bin HTTP/1.1\n\r \

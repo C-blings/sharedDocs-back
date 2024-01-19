@@ -34,7 +34,24 @@ namespace web_layout{
 
 				Method method = string_to_method[method_and_path[0]];
 				std::string path = method_and_path[1];
-				std::unordered_map<std::string, std::string> headers;
+				std::unordered_map<std::string, std::string> headers, parameters;
+
+                auto parameters_separator = path.find('?');
+                if (parameters_separator != std::string::npos){
+                    std::cout << "looking for params\n";
+                    std::string parameters_string = path.substr(parameters_separator + 1);
+                    path = path.substr(0, parameters_separator);
+                    std::vector<std::string> parameters_part;
+                    boost::split(parameters_part,  parameters_string, boost::is_any_of(";"), boost::token_compress_on);
+                    for (std::string& parameter : parameters_part){
+                        auto separator = parameter.find('=');
+                        std::string key = parameter.substr(0, separator),
+                                    value = parameter.substr(separator + 1);
+                        std::cout << key << ' ' << value << '\n';
+                        parameters[key] = value;
+                    }
+                }
+
 				std::string body;
 
 				int i;
@@ -61,7 +78,7 @@ namespace web_layout{
                         }
 				}
 
-                return HttpRequest(method, path, headers, body);
+                return HttpRequest(method, path, headers, body, parameters);
             }
     };
 
