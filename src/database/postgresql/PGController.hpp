@@ -7,12 +7,11 @@
 #include <variant>
 #include <vector>
 
-#include <pqxx/transaction>
-#include <pqxx/result>
-
 #include <logging/Logger.hpp>
 #include <database/postgresql/PGConnection.hpp>
 #include <database/DatabaseController.hpp>
+#include <pqxx/transaction>
+#include <pqxx/result>
 
 namespace database::postgresql{
     using Store = std::variant<int, bool, std::string>;

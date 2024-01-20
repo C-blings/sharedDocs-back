@@ -12,6 +12,8 @@ namespace web_layout{
     private:
         static HttpResponse AddUser(const HttpRequest& request);
 
+        static HttpResponse CheckIfUserExists(const HttpRequest& request);
+
     private:
         static std::shared_ptr<database::PGDatabase> database_;
     };
