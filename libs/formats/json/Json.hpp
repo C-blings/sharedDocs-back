@@ -9,7 +9,8 @@
 namespace formats::json{
     class JsonValue{
     public:
-        JsonValue(const std::string& text);
+
+        explicit JsonValue(const std::string& text = "");
 
         JsonValue(const Json::Value& value) : value_(value) {}
 
@@ -19,6 +20,12 @@ namespace formats::json{
         T GetValue(const std::string& key) {
             throw std::runtime_error(fmt::format("Can not cast to: {}", typeid(T).name()));
         }
+
+        void AddValue(const std::string& key, const std::string& value);
+
+        void AddValue(const std::string& key, const JsonValue& value);
+
+        std::string AsString();
 
     private:
         Json::Value value_;

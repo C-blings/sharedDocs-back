@@ -1,5 +1,6 @@
 #include "RouterBase.hpp"
 #include <optional>
+#include <iostream>
 
 namespace web_layout{
     RequestHandler RouterBase::GetRequestHandler(const HttpRequest& request) const {

@@ -1,3 +1,5 @@
+#define FMT_HEADER_ONLY
+
 #include "RegistrationContainers.hpp"
 #include <formats/json/Json.hpp>
 
@@ -20,7 +22,7 @@ namespace web_layout{
         };
 
         try{
-            database_->HandleQuery("INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)", parameters);
+            database_->HandleQuery("INSERT INTO users (login, email, password) VALUES ($1, $2, $3)", parameters);
         }catch (std::exception& e){
             return HttpResponse(400, "Error", headers);
         }
@@ -34,7 +36,7 @@ namespace web_layout{
         };
 
         std::vector<database::postgresql::Store> parameters = {
-                request.GetParameters()[0]
+                request.GetParameters().at("userName")
         };
 
         bool result;
@@ -46,15 +48,16 @@ namespace web_layout{
             return HttpResponse(400, "Error", headers);
         }
 
-        std::string body = fmt::format("{result: {}}", result ? "true" : "false");
+        formats::json::JsonValue body;
+        body.AddValue("result", result ? "true" : "false");
 
-        return HttpResponse(200, "OK", headers, body);
+        return HttpResponse(200, "OK", headers, body.AsString());
     }
 
     RegistrationContainers::RegistrationContainers() {
         Container container;
-        container.AddValue({HandlerMatcher(Method::POST, std::regex("/add-user")), AddUser});
-        container.AddValue({HandlerMatcher(Method::POST, std::regex("/check-if-user-exists?userName=*")), CheckIfUserExists});
+        container.AddValue({HandlerMatcher(Method::POST, "\\/add-user"), AddUser});
+        container.AddValue({HandlerMatcher(Method::GET, "\\/check-if-user-exists\\?userName=.*"), CheckIfUserExists});
         SetContainer(container);
     }
 }

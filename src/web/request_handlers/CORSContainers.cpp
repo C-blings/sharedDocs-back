@@ -14,7 +14,7 @@ namespace web_layout{
     CORSContainer::CORSContainer() {
         // create a container with handlers
         Container container;
-        container.AddValue({HandlerMatcher(Method::OPTIONS, std::regex(".*")), CORSHandler});
+        container.AddValue({HandlerMatcher(Method::OPTIONS, ".*"), CORSHandler});
         SetContainer(container);
     }
 }

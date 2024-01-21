@@ -109,3 +109,12 @@ DETAIL:  Ключ "(nickname)=()" уже существует.
 DETAIL:  Ключ "(nickname)=(sliderer)" уже существует.
 
  Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)
+[ 2024-01-21 15:12:04 ERROR ] Database error: ERROR:  duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(mail.ru) already exists.
+
+ Query: INSERT INTO users (nickname, email, password) VALUES ($1, $2, $3)
+[ 2024-01-21 16:31:53 ERROR ] Database error: ERROR:  column "login" does not exist
+LINE 1: SELECT * FROM users WHERE login=$1
+                                  ^
+
+ Query: SELECT * FROM users WHERE login=$1

@@ -38,4 +38,17 @@ namespace formats::json{
         return JsonValue(value_[key]);
     }
 
+    void JsonValue::AddValue(const std::string &key, const std::string &value) {
+        value_[key] = value;
+    }
+
+    void JsonValue::AddValue(const std::string &key, const formats::json::JsonValue &value) {
+        value_[key] = value.GetValue();
+    }
+
+    std::string JsonValue::AsString() {
+        Json::FastWriter writer;
+        return writer.write(value_);
+    }
+
 }

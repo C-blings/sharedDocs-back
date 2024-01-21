@@ -8,7 +8,7 @@ namespace web_layout{
     public:
         TestContainer(){
             Container container;
-            container.AddValue({HandlerMatcher(Method::GET, std::regex("/")), RootHandler});
+            container.AddValue({HandlerMatcher(Method::GET, "/"), RootHandler});
 
             SetContainer(container);
         }
