@@ -36,7 +36,7 @@ namespace web_layout{
         };
 
         std::vector<database::postgresql::Store> parameters = {
-                request.GetParameters().at("userName")
+                request.GetParameters().at("login")
         };
 
         bool result;
@@ -57,7 +57,7 @@ namespace web_layout{
     RegistrationContainers::RegistrationContainers() {
         Container container;
         container.AddValue({HandlerMatcher(Method::POST, "\\/add-user"), AddUser});
-        container.AddValue({HandlerMatcher(Method::GET, "\\/check-if-user-exists\\?userName=.*"), CheckIfUserExists});
+        container.AddValue({HandlerMatcher(Method::GET, "\\/check-if-user-exists\\?login=.*"), CheckIfUserExists});
         SetContainer(container);
     }
 }

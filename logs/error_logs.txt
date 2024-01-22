@@ -118,3 +118,15 @@ LINE 1: SELECT * FROM users WHERE login=$1
                                   ^
 
  Query: SELECT * FROM users WHERE login=$1
+[ 2024-01-22 11:14:20 ERROR ] Database error: ERROR:  duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(asdf) already exists.
+
+ Query: INSERT INTO users (login, email, password) VALUES ($1, $2, $3)
+[ 2024-01-22 11:21:10 ERROR ] Database error: ERROR:  duplicate key value violates unique constraint "users_nickname_key"
+DETAIL:  Key (login)=(sliderer) already exists.
+
+ Query: INSERT INTO users (login, email, password) VALUES ($1, $2, $3)
+[ 2024-01-22 11:27:53 ERROR ] Database error: ERROR:  duplicate key value violates unique constraint "users_nickname_key"
+DETAIL:  Key (login)=(sliderer) already exists.
+
+ Query: INSERT INTO users (login, email, password) VALUES ($1, $2, $3)

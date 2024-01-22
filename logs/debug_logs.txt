@@ -3061,3 +3061,474 @@ Accept-Encoding: gzip, deflate, br
 Accept-Language: ru,en;q=0.9
 
 
+[ 2024-01-22 10:26:13 DEBUG ] Server restart
+[ 2024-01-22 10:30:25 DEBUG ] REQUEST: GET /favicon.ico HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: empty
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-22 10:30:58 DEBUG ] REQUEST: GET /check-if-user-exists?sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-22 10:31:20 DEBUG ] REQUEST: GET /check-if-user-exists?userName=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+Accept: */*
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+ "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-22 10:32:42 DEBUG ] REQUEST: GET /check-if-user-exists?sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-22 10:36:29 DEBUG ] Server restart
+[ 2024-01-22 10:36:42 DEBUG ] REQUEST: GET /check-if-user-exists?login=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+6
+[ 2024-01-22 10:37:04 DEBUG ] REQUEST: GET /check-if-user-exists?login=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+6
+[ 2024-01-22 10:37:26 DEBUG ] REQUEST: GET /check-if-user-exists?login=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+6
+[ 2024-01-22 10:37:56 DEBUG ] REQUEST: GET /check-if-user-exists?login=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+6
+[ 2024-01-22 10:38:14 DEBUG ] REQUEST: GET /check-if-user-exists?login=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+6
+[ 2024-01-22 10:38:14 DEBUG ] REQUEST: OPTIONS /add-user HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+Accept: */*
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: content-type
+Origin: http://localhost:3000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+6
+[ 2024-01-22 10:38:14 DEBUG ] REQUEST: POST /add-user HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+Content-Length: 68
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3000
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3000/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+{"login":"sliderer","email":"a6271547@mail.ru","password":"1351354"}
+[ 2024-01-22 11:04:05 DEBUG ] Server restart
+[ 2024-01-22 11:13:38 DEBUG ] Server restart
+[ 2024-01-22 11:14:09 DEBUG ] REQUEST: GET /favicon.ico HTTP/1.1
+Host: localhost
+Connection: keep-alive
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: empty
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-22 11:14:17 DEBUG ] REQUEST: GET /check-if-user-exists?login=sl HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3001
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3001/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-22 11:14:17 DEBUG ] REQUEST: OPTIONS /add-user HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+Accept: */*
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: content-type
+Origin: http://localhost:3001
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3001/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+://localhost:3001/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+
+[ 2024-01-22 11:14:17 DEBUG ] REQUEST: POST /add-user HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+Content-Length: 46
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3001
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3001/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+{"login":"sl","email":"asdf","password":"asd"}/5
+[ 2024-01-22 11:14:20 DEBUG ] REQUEST: GET /check-if-user-exists?login=sl HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3001
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3001/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+Accept-Language: ru,en;q=0.9
+
+{"login":"sl","email":"asdf","password":"asd"}/5
+[ 2024-01-22 11:14:20 DEBUG ] REQUEST: POST /add-user HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+Content-Length: 46
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3001
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3001/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+{"login":"sl","email":"asdf","password":"asd"}/5
+[ 2024-01-22 11:16:08 DEBUG ] REQUEST: GET /check-if-user-exists?login=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3002
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+-Language: ru,en;q=0.9
+
+{"login":"sl","email":"asdf","password":"asd"}/5
+[ 2024-01-22 11:18:54 DEBUG ] Server restart
+[ 2024-01-22 11:19:55 DEBUG ] Server restart
+[ 2024-01-22 11:20:48 DEBUG ] Server restart
+[ 2024-01-22 11:21:09 DEBUG ] REQUEST: GET /check-if-user-exists?login=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3002
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+/5
+[ 2024-01-22 11:21:09 DEBUG ] REQUEST: OPTIONS /add-user HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+Accept: */*
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: content-type
+Origin: http://localhost:3002
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+/5
+[ 2024-01-22 11:21:09 DEBUG ] REQUEST: POST /add-user HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+Content-Length: 68
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3002
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+{"login":"sliderer","email":"oweofjwofj@wkfj","password":"sfwefwef"}
+[ 2024-01-22 11:22:16 DEBUG ] REQUEST: GET /check-if-user-exists?login=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3002
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+-Language: ru,en;q=0.9
+
+{"login":"sliderer","email":"oweofjwofj@wkfj","password":"sfwefwef"}
+[ 2024-01-22 11:26:52 DEBUG ] Server restart
+[ 2024-01-22 11:27:43 DEBUG ] Server restart
+[ 2024-01-22 11:27:51 DEBUG ] REQUEST: GET /check-if-user-exists?login=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3002
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+/5
+[ 2024-01-22 11:27:53 DEBUG ] REQUEST: GET /check-if-user-exists?login=sliderer HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3002
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+/5
+[ 2024-01-22 11:27:53 DEBUG ] REQUEST: OPTIONS /add-user HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+Accept: */*
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: content-type
+Origin: http://localhost:3002
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+/5
+[ 2024-01-22 11:27:53 DEBUG ] REQUEST: POST /add-user HTTP/1.1
+Host: 127.0.0.1
+Connection: keep-alive
+Content-Length: 72
+sec-ch-ua: "Chromium";v="118", "YaBrowser";v="23", "Not=A?Brand";v="99"
+Accept: application/json, text/plain, */*
+Content-Type: application/json
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.714 YaBrowser/23.11.1.714 Yowser/2.5 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:3002
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:3002/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: ru,en;q=0.9
+
+{"login":"sliderer","email":"wfegwf@sefwe","password":"wefwefwefwefwef"}
