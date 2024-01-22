@@ -49,7 +49,7 @@ namespace web_layout{
         }
 
         formats::json::JsonValue body;
-        body.AddValue("result", result ? "true" : "false");
+        body.AddValue("result", result);
 
         return HttpResponse(200, "OK", headers, body.AsString());
     }

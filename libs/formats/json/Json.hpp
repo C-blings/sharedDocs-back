@@ -21,9 +21,10 @@ namespace formats::json{
             throw std::runtime_error(fmt::format("Can not cast to: {}", typeid(T).name()));
         }
 
-        void AddValue(const std::string& key, const std::string& value);
-
-        void AddValue(const std::string& key, const JsonValue& value);
+        template<typename T>
+        void AddValue(const std::string &key, const T& value) {
+            value_[key] = value;
+        }
 
         std::string AsString();
 
