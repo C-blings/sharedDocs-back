@@ -130,3 +130,87 @@ DETAIL:  Key (login)=(sliderer) already exists.
 DETAIL:  Key (login)=(sliderer) already exists.
 
  Query: INSERT INTO users (login, email, password) VALUES ($1, $2, $3)
+[ 2024-01-22 12:54:26 ERROR ] Database error: ОШИБКА:  столбец "login" не существует
+LINE 1: SELECT * FROM users WHERE login=$1
+                                  ^
+
+ Query: SELECT * FROM users WHERE login=$1
+[ 2024-01-22 13:00:38 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(login)=(sliderer)" уже существует.
+
+ Query: INSERT INTO users (login, email, password) VALUES ($1, $2, $3)
+[ 2024-01-22 13:02:37 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(login)=(sliderer)" уже существует.
+
+ Query: INSERT INTO users (login, email, password) VALUES ($1, $2, $3)
+[ 2024-01-22 13:16:46 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(login)=(sliderer)" уже существует.
+
+ Query: INSERT INTO users (login, email, password) VALUES ($1, $2, $3)
+[ 2024-01-22 13:23:53 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(login)=(sliderer)" уже существует.
+
+ Query: INSERT INTO users (login, email, password) VALUES ($1, $2, $3)
+[ 2024-01-22 13:24:49 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:24:50 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:24:52 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:24:53 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:24:56 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:24:57 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:25:00 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:25:00 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:25:01 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:25:15 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:25:17 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:25:17 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:27:41 ERROR ] Database error: ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "users_nickname_key"
+DETAIL:  Ключ "(login)=(sliderer)" уже существует.
+
+ Query: INSERT INTO users (login, email, password) VALUES ($1, $2, $3)
+[ 2024-01-22 13:28:03 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:03 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:03 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:03 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:04 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:06 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:07 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:07 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:07 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:08 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:08 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:08 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:08 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:08 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:08 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:09 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:09 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:09 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:09 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:09 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:10 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:10 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:10 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:10 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:10 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:11 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:11 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:11 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:11 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:11 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:11 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:12 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:12 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:12 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:12 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:12 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:12 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:12 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:13 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:13 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:13 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:13 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:13 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:13 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:13 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:14 ERROR ] Lost connection to the database server.
+[ 2024-01-22 13:28:14 ERROR ] Lost connection to the database server.

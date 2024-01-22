@@ -46,6 +46,7 @@ namespace web_layout{
 
             Logger(Debug).Print("REQUEST: ", request_buffer);
             std::string response = handler->HandleRequest(request).AsString();
+            Logger(Debug).Print("RESPONSE: ", response);
 
             if(send(listener_, response.c_str(), response.size(), 0) < 0){
                 perror("sending answer");

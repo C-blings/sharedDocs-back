@@ -63,10 +63,8 @@ namespace database::postgresql{
                 worker.commit();
             } catch(pqxx::sql_error& error) {
                 Logger(Error).Print("Database error: ", error.what(), "\n Query: ", error.query());
-                throw error;
             } catch(std::exception& error) {
                 Logger(Error).Print(error.what());
-                throw error;
             }
 
             return result;
