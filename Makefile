@@ -5,7 +5,7 @@ SRC_FILES = $(shell find ./src -name '*.cpp')
 CUSTOM_LIBS = $(shell find ./libs/bin -name '*.a')
 INCLUDE_DIRS = -I ./src -I ./libs -I ./codegen
 BUILD_FOLDER = build
-DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib libpqxx-dev
+DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib libpqxx-dev libfmt-dev
 
 TESTS_NAME = run_tests
 TESTS_FILES = $(shell find ./tests -name '*.cpp')
@@ -37,28 +37,21 @@ run:
 codegen: $(CODEGEN_MAIN_FILE)
 	mkdir -p $(BUILD_FOLDER)
 	$(COMPILER) -g $(CODEGEN_MAIN_FILE) $(CODEGEN_FILES) $(CUSTOM_LIBS) -o $(CODEGEN_NAME) $(CODEGEN_FLAGS)
-	sudo mv $(CODEGEN_NAME) $(BUILD_FOLDER)
+	mv $(CODEGEN_NAME) $(BUILD_FOLDER)
 	valgrind ./$(BUILD_FOLDER)/$(CODEGEN_NAME)
 
 .PHONY: install_deps
 install_deps:
-	sudo apt-get install $(DEPS) -y
+	apt-get install $(DEPS) -y
 
 .PHONY: test
 test: $(TEST_MAIN_FILE)
-	mkdir -p $(BUILD_FOLDER)
+#	mkdir -p $(BUILD_FOLDER)
 	$(COMPILER) -g $(TEST_MAIN_FILE) $(SRC_FILES) $(TESTS_FILES) $(CUSTOM_LIBS) -o $(TESTS_NAME) $(TESTING_FLAGS)
-	sudo mv $(TESTS_NAME) $(BUILD_FOLDER)
-	valgrind ./$(BUILD_FOLDER)/$(TESTS_NAME)
+#	mv $(TESTS_NAME) $(BUILD_FOLDER)
+#	valgrind ./$(BUILD_FOLDER)/$(TESTS_NAME)
 
 .PHONY: clean
 clean:
 	rm -f $(BUILD_FOLDER)/$(NAME)
 	rm -f $(BUILD_FOLDER)/$(TESTS_NAME)
-
-docker_install:
-	sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
-	curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-	apt-cache policy docker-ce
-	sudo apt install docker-ce
