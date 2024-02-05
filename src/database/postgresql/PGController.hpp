@@ -12,6 +12,7 @@
 #include <database/DatabaseController.hpp>
 #include <pqxx/transaction>
 #include <pqxx/result>
+#include <pqxx/params>
 
 namespace database::postgresql{
     using Store = std::variant<int, bool, std::string>;

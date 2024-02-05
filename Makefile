@@ -5,7 +5,7 @@ SRC_FILES = $(shell find ./src -name '*.cpp')
 CUSTOM_LIBS = $(shell find ./libs/bin -name '*.a')
 INCLUDE_DIRS = -I ./src -I ./libs -I ./codegen
 BUILD_FOLDER = build
-DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib libpqxx-dev libfmt-dev
+DEPS = 	g++ valgrind libboost-all-dev libjsoncpp-dev libgtest-dev libcurl4-openssl-dev postgresql postgresql-contrib libpq5 pkg-config libfmt-dev libpq-dev
 
 TESTS_NAME = run_tests
 TESTS_FILES = $(shell find ./tests -name '*.cpp')
@@ -42,7 +42,7 @@ codegen: $(CODEGEN_MAIN_FILE)
 
 .PHONY: install_deps
 install_deps:
-	apt-get install $(DEPS) -y
+	apt install $(DEPS) -y
 
 .PHONY: test
 test: $(TEST_MAIN_FILE)
