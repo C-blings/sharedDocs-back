@@ -1,8 +1,6 @@
-
-
 services:
   postgresql:
-    image: postgres:15.0-alpine
+    image: postgres:16.0-alpine
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=1234
@@ -12,6 +10,9 @@ services:
     networks:
       default:
         ipv4_address: 172.28.0.3
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
   backend:
     image: sharedocs-backend
     ports:
@@ -22,12 +23,14 @@ services:
       default:
         ipv4_address: 172.28.0.2
 
+volumes:
+  postgres_data:
+
 networks:
   default:
-    # Use a custom driver
     driver: bridge
     attachable: true
     ipam:
       driver: default
       config:
-        - subnet: 172.28.0.0/16
+        - subnet: 172.28.0.0/24
