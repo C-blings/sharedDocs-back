@@ -11,20 +11,17 @@ services:
       default:
         ipv4_address: 172.28.0.3
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - /var/lib/postgresql/16/main/:/var/lib/postgresql/data/
 
   backend:
     image: sharedocs-backend
     ports:
-      - 80:80
+      - 127.0.0.1:80:80
     links:
       - postgresql
     networks:
       default:
         ipv4_address: 172.28.0.2
-
-volumes:
-  postgres_data:
 
 networks:
   default:
